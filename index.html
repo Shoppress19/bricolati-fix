@@ -3,13 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bricolati Fix | الدليل المرجعي المستقل</title>
+    <title>Bricolati Fix | الدليل المرجعي</title>
     <style>
-        :root {
-            --primary-color: #2ecc71;
-            --secondary-color: #2c3e50;
-            --bg-color: #f4f7f6;
-            --text-color: #34495e;
-        }
+        body { background-color: #f4f7f6; font-family: Arial, sans-serif; display: flex; justify-content: center; padding: 20px; margin: 0; }
+        .container { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 500px; width: 100%; text-align: center; border-top: 6px solid #2ecc71; }
+        h1 { color: #2c3e50; font-size: 24px; }
+        p { color: #7f8c8d; line-height: 1.5; font-size: 15px; }
+        .tag-container { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin: 20px 0; }
+        .tag { background: #eef2f3; color: #34495e; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid #dcdde1; }
+        
+        /* قسم المنتجات */
+        .product-card { border: 1px solid #eee; padding: 15px; border-radius: 10px; background: #fafafa; margin-bottom: 10px; text-align: right; }
+        .product-card h4 { margin: 0; color: #2c3e50; font-size: 16px; }
+        .btn-link { color: #2ecc71; text-decoration: none; font-weight: bold; font-size: 13px; display: inline-block; margin-top: 8px; }
 
-        body
+        /* الأقسام القانونية */
+        .legal-footer { margin-top: 30px; padding-top: 15px; border-top: 1px dashed #ddd; font-size: 12px; }
+        .legal-footer a { color: #95a5a6; text-decoration: none; margin: 0 5px; cursor: pointer; }
+        .legal-box { display: none; background: #fffde7; padding: 15px; border-radius: 8px; margin-top: 15px; text-align: right; font-size: 13px; border: 1px solid #fff9c4; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🛠️ Bricolati Fix</h1>
+    <p>الدليل المرجعي المستقل لإصلاحات وتطويرات Bricolati ومراجعات AliExpress.</p>
+
+    <div class="tag-container">
+        <span class="tag">#Bricolati</span>
+        <span class="tag">#Fix</span>
+        <span class="tag">#Shoppress19</span>
+        <span class="tag">#AliExpress</span>
+    </div>
+
+    <h3 style="color: #2c3e50; font-size: 18px;">المقترحات المرجعية</h3>
+    
+    <div class="product-card">
+        <h4>📦 طقم مفكات Bricolati Precision</h4>
+        <p style="font-size: 13px; margin: 5px 0;">أداة أساسية عالية الجودة للإصلاحات الدقيقة.</p>
+        <a href="#" class="btn-link">عرض التفاصيل ←</a>
+    </div>
+
+    <div class="product-card">
+        <h4>⚡ كابلات فحص الأداء</h4>
+        <p style="font-size: 13px; margin: 5px 0;">حلول تقنية لتحسين أداء الأجهزة المنزلية.</p>
+        <a href="#" class="btn-link">عرض التفاصيل ←</a>
+    </div>
+
+    <div class="legal-footer">
+        <a onclick="showLegal('privacy')">الخصوصية</a> | 
+        <a onclick="showLegal('terms')">الشروط</a> | 
+        <a onclick="showLegal('disclaimer')">إخلاء المسؤولية</a>
+        
+        <div id="legal-display" class="legal-box">
+            </div>
+    </div>
+</div>
+
+<script>
+    function showLegal(type) {
+        var display = document.getElementById('legal-display');
+        display.style.display = 'block';
+        if(type === 'privacy') {
+            display.innerHTML = "<strong>الخصوصية:</strong> لا نجمع بيانات شخصية. الروابط الخارجية تتبع سياسة AliExpress.";
+        } else if(type === 'terms') {
+            display.innerHTML = "<strong>الشروط:</strong> الموقع مرجع تعليمي واستخدام المعلومات على مسؤوليتك الخاصة.";
+        } else {
+            display.innerHTML = "<strong>إخلاء المسؤولية:</strong> قد نحصل على عمولة من روابط الأفلييت لدعم استمرار الموقع.";
+        }
+    }
+</script>
+
+</body>
+</html>
