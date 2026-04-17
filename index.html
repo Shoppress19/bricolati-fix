@@ -3,75 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bricolati Fix | لوحة التحكم والمرجع</title>
+    <title>Bricolati Fix | المرجع التقني الشامل</title>
     <style>
-        :root { --main-green: #2ecc71; --dark-blue: #2c3e50; --bg: #f4f7f6; }
-        body { background-color: var(--bg); font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; padding: 20px; margin: 0; }
-        .container { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 450px; width: 100%; border-top: 8px solid var(--main-green); text-align: center; }
+        :root { --main-green: #2ecc71; --dark-blue: #2c3e50; --bg: #f8fafb; }
+        body { background-color: var(--bg); font-family: 'Segoe UI', Tahoma, sans-serif; display: flex; justify-content: center; padding: 20px; margin: 0; }
+        .container { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); max-width: 480px; width: 100%; border-top: 8px solid var(--main-green); }
         
-        .search-box { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; margin-bottom: 20px; box-sizing: border-box; }
-        
-        .product-card { border: 1px dotted #ccc; padding: 15px; border-radius: 12px; background: #fff; margin-bottom: 20px; text-align: right; position: relative; }
-        .product-card h4 { margin: 0 0 10px 0; color: var(--dark-blue); border-right: 3px solid var(--main-green); padding-right: 10px; }
-        
-        /* أزرار النسخ */
-        .copy-btn { background: var(--dark-blue); color: white; border: none; padding: 6px 12px; border-radius: 5px; font-size: 11px; cursor: pointer; margin-top: 10px; transition: 0.3s; }
-        .copy-btn:hover { background: var(--main-green); }
-        .copy-btn:active { transform: scale(0.95); }
+        h1 { color: var(--dark-blue); font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .section-title { border-right: 4px solid var(--main-green); padding-right: 10px; margin: 30px 0 15px; color: var(--dark-blue); font-size: 18px; text-align: right; }
 
-        .seo-preview { background: #f9f9f9; padding: 10px; border-radius: 5px; font-size: 11px; color: #666; margin-top: 10px; border: 1px solid #eee; display: none; }
+        /* تنسيق الأسئلة الشائعة */
+        .faq-item { background: #f9f9f9; border-radius: 8px; margin-bottom: 10px; padding: 12px; text-align: right; cursor: pointer; transition: 0.3s; }
+        .faq-item:hover { background: #f0f0f0; }
+        .faq-question { font-weight: bold; font-size: 14px; color: var(--dark-blue); }
+        .faq-answer { font-size: 13px; color: #666; margin-top: 8px; display: none; border-top: 1px solid #eee; padding-top: 8px; }
 
-        footer { margin-top: 25px; font-size: 11px; color: #999; border-top: 1px solid #eee; padding-top: 15px; }
-        .status-dot { height: 8px; width: 8px; background-color: var(--main-green); border-radius: 50%; display: inline-block; margin-left: 5px; }
+        /* نموذج اتصل بنا */
+        .contact-form { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; box-sizing: border-box; outline: none; }
+        .contact-form input:focus { border-color: var(--main-green); }
+        .send-btn { background: var(--main-green); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .send-btn:hover { background: #27ae60; }
+
+        footer { margin-top: 40px; text-align: center; font-size: 11px; color: #999; border-top: 1px solid #eee; padding-top: 20px; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1 style="font-size: 22px; color: var(--dark-blue);">Bricolati Fix 🛠️</h1>
-    <p style="font-size: 13px; color: #7f8c8d;"><span class="status-dot"></span> نظام إدارة المحتوى المرجعي</p>
+    <h1>Bricolati Fix 🛠️</h1>
+    <p style="text-align: center; font-size: 14px; color: #7f8c8d;">المرجع المستقل للإصلاحات الذكية وأدوات AliExpress.</p>
 
-    <input type="text" id="searchInput" class="search-box" placeholder="ابحث في المستودع..." onkeyup="filterProducts()">
-
-    <div id="productList">
-        <div class="product-card" data-name="طقم مفكات">
-            <h4>طقم مفكات Bricolati PRO</h4>
-            <p style="font-size: 12px; color: #666;">الوصف: طقم متكامل للإصلاحات الدقيقة والكهربائية.</p>
-            
-            <button class="copy-btn" onclick="copySEO('طقم مفكات، أدوات إصلاح، Bricolati، مفك دقة، AliExpress', 'اكتشف طقم مفكات Bricolati PRO الاحترافي. دليل مرجعي مستقل للأدوات الدقيقة على AliExpress، مصمم للمبدعين والهواة لضمان جودة الإصلاح وبراعة التنفيذ.')">نسخ بيانات SEO 📋</button>
-            
-            <div class="seo-preview" id="p1">تم تجهيز الوسوم ووصف الميتا!</div>
-        </div>
-
-        <div class="product-card" data-name="ميزان ليزر">
-            <h4>ميزان ليزر رقمي الذكي</h4>
-            <p style="font-size: 12px; color: #666;">الوصف: ميزان دقيق للقياسات الهندسية والمنزلية.</p>
-            
-            <button class="copy-btn" onclick="copySEO('ميزان ليزر، قياس رقمي، أدوات هندسية، Bricolati، AliExpress', 'دليل ميزان الليزر الرقمي من Bricolati. مراجعة موضوعية لأدق أدوات القياس على AliExpress، مثالي لمشاريع الترميم والديكور المنزلي بدقة متناهية.')">نسخ بيانات SEO 📋</button>
-        </div>
+    <div class="section-title">الأسئلة الشائعة (FAQ)</div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">هل تبيعون هذه الأدوات مباشرة؟</div>
+        <div class="faq-answer">لا، نحن مرجع تقني مستقل. نقوم بمراجعة وتجربة الأدوات وتوفير روابط الحصول عليها من AliExpress لضمان الجودة.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">كيف أتأكد من جودة المنتج المذكور؟</div>
+        <div class="faq-answer">جميع الأدوات في قائمة Bricolati تخضع لتقييم بناءً على معايير الاستخدام الاحترافي وسهولة الإصلاح.</div>
     </div>
 
+    <div class="section-title">اتصل بنا</div>
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('تم استلام رسالتك بنجاح! سنرد عليك قريباً.');">
+        <input type="text" placeholder="الاسم الكامل" required>
+        <input type="email" placeholder="البريد الإلكتروني" required>
+        <textarea rows="4" placeholder="كيف يمكننا مساعدتك؟" required></textarea>
+        <button type="submit" class="send-btn">إرسال الرسالة</button>
+    </form>
+
     <footer>
-        <p>© 2026 Bricolati Fix | Shoppress19</p>
-        <p>استراتيجية المحتوى: دليل مرجعي مستقل</p>
+        <div style="margin-bottom: 10px;">
+            <span>الخصوصية</span> | <span>الشروط</span> | <span>إخلاء المسؤولية</span>
+        </div>
+        <p>© 2026 Bricolati Fix - تطوير Shoppress19</p>
     </footer>
 </div>
 
 <script>
-    function copySEO(tags, meta) {
-        const fullText = "الوسوم:\n" + tags + "\n\nوصف الميتا:\n" + meta;
-        navigator.clipboard.writeText(fullText).then(() => {
-            alert("تم نسخ الوسوم ووصف الميتا بنجاح!");
-        });
-    }
-
-    function filterProducts() {
-        let input = document.getElementById('searchInput').value.toLowerCase();
-        let cards = document.getElementsByClassName('product-card');
-        for (let i = 0; i < cards.length; i++) {
-            let name = cards[i].getAttribute('data-name');
-            cards[i].style.display = name.toLowerCase().includes(input) ? "block" : "none";
-        }
+    function toggleFaq(element) {
+        const answer = element.querySelector('.faq-answer');
+        const isVisible = answer.style.display === 'block';
+        answer.style.display = isVisible ? 'none' : 'block';
     }
 </script>
 
