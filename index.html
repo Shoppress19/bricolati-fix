@@ -3,30 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bricolati Fix | مراجعة محطة Gordak</title>
+    <title>Bricolati | الواجهة الرسمية</title>
     <style>
-        :root { --main-green: #2ecc71; --dark-blue: #2c3e50; --bg: #f8fafb; }
+        :root { --main-green: #2ecc71; --dark-blue: #2c3e50; }
         body { background-color: #f0f2f5; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; padding: 20px; margin: 0; }
         .container { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); max-width: 500px; width: 100%; border-top: 8px solid var(--main-green); }
         
-        header { text-align: center; margin-bottom: 25px; }
-        h1 { color: var(--dark-blue); font-size: 24px; margin: 0; }
-        .tagline { color: #7f8c8d; font-size: 13px; margin-top: 5px; }
+        header { text-align: center; margin-bottom: 20px; }
+        h1 { color: var(--dark-blue); font-size: 26px; margin: 0; }
 
-        /* قسم الفيديو */
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background: #000; margin-bottom: 20px; border: 1px solid #ddd; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        /* قسم فيديو الانترو */
+        .intro-video { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 15px; overflow: hidden; background: #000; margin-bottom: 25px; border: 3px solid var(--soft-gray); }
+        .intro-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        /* المدونة */
-        .blog-post { text-align: right; margin-bottom: 30px; }
-        .post-title { color: var(--dark-blue); font-size: 20px; border-right: 4px solid var(--main-green); padding-right: 12px; margin-bottom: 10px; }
-        .post-desc { color: #555; line-height: 1.7; font-size: 14px; }
+        /* تدوينة تعريفية بالقناة */
+        .post-box { text-align: right; margin-bottom: 30px; }
+        .post-title { color: var(--dark-blue); font-size: 20px; border-right: 5px solid var(--main-green); padding-right: 12px; margin-bottom: 15px; }
+        .post-text { color: #444; line-height: 1.8; font-size: 15px; }
 
         /* زر النسخ الأخضر المصلح */
-        .save-btn { background: var(--main-green); color: white; border: none; padding: 12px; border-radius: 10px; cursor: pointer; width: 100%; font-weight: bold; font-size: 15px; margin-top: 15px; transition: 0.3s; }
-        .save-btn:hover { background: #27ae60; transform: translateY(-2px); }
+        .save-btn { background: var(--main-green); color: white; border: none; padding: 12px; border-radius: 10px; cursor: pointer; width: 100%; font-weight: bold; font-size: 15px; transition: 0.3s; }
+        .save-btn:hover { background: #27ae60; }
 
-        /* الفوتر القانوني */
         footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; font-size: 12px; color: #95a5a6; }
         .legal-link { color: #3498db; cursor: pointer; text-decoration: none; margin: 0 8px; }
     </style>
@@ -35,44 +33,43 @@
 
 <div class="container">
     <header>
-        <h1>Bricolati Blog 🛠️</h1>
-        <p class="tagline">المرجع المستقل لمراجعات AliExpress وتطويرات Bricolati</p>
+        <h1>Bricolati Fix 🛠️</h1>
+        <p style="color: #666; font-size: 13px;">مرحباً بكم في المرجع الرسمي للإصلاحات</p>
     </header>
 
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/Z2WxRGYfjeU" allowfullscreen></iframe>
+    <div class="intro-video">
+        <iframe src="https://www.youtube.com/embed/Z2WxRGYfjeU?autoplay=1&mute=1" allowfullscreen></iframe>
     </div>
 
-    <article class="blog-post">
-        <h2 class="post-title">مراجعة محطة اللحام Gordak الاحترافية</h2>
-        <div class="post-desc">
-            نستعرض في هذا المقال محطة اللحام والهواء الساخن Gordak، الأداة المتكاملة لإصلاح الدوائر الإلكترونية المعقدة. تتميز بدقة التحكم في درجات الحرارة وتوزيع الهواء، مما يجعلها الخيار الأول للفنيين الطموحين على AliExpress.
+    <article class="post-box">
+        <h2 class="post-title">انطلاق منصة Bricolati المرجعية</h2>
+        <div class="post-text">
+            نحن فخورون بتقديم هويتنا البصرية الجديدة. Bricolati ليست مجرد قناة، بل هي مرجع مستقل يهدف لتطوير مهارات الإصلاح ومراجعة أفضل أدوات AliExpress بموضوعية تامة.
         </div>
         
         <button class="save-btn" onclick="copySEO()">
-            نسخ بيانات SEO المقال 📋
+            نسخ بيانات SEO الواجهة 📋
         </button>
     </article>
 
     <footer>
         <div style="margin-bottom: 10px;">
-            <span class="legal-link" onclick="alert('الخصوصية: لا نجمع بياناتك.')">الخصوصية</span> | 
-            <span class="legal-link" onclick="alert('الشروط: مرجع تعليمي مستقل.')">الشروط</span> | 
-            <span class="legal-link" onclick="alert('إخلاء المسؤولية: روابط مستقلة.')">إخلاء المسؤولية</span>
+            <span class="legal-link" onclick="alert('الخصوصية: تصفح آمن تماماً.')">الخصوصية</span> | 
+            <span class="legal-link" onclick="alert('الشروط: المحتوى مرجعي فقط.')">الشروط</span>
         </div>
-        <p>© 2026 Bricolati Fix - Shoppress19</p>
+        <p>© 2026 Bricolati Fix | Shoppress19</p>
     </footer>
 </div>
 
 <script>
     function copySEO() {
-        const tags = "محطة لحام، Gordak، إصلاح إلكترونيات، Bricolati، أدوات AliExpress";
-        const meta = "اكتشف مراجعة محطة اللحام Gordak الاحترافية من Bricolati. دليل مرجعي شامل لأدوات الهواء الساخن واللحام الدقيق المتوفرة على AliExpress لإصلاح الأجهزة الإلكترونية.";
+        const tags = "Bricolati, AliExpress, إصلاحات، مراجعة أدوات، DIY Morocco";
+        const meta = "اكتشف عالم Bricolati للإصلاحات الاحترافية. مرجعك المستقل لمراجعة أدوات AliExpress وتطوير المهارات التقنية بأعلى معايير الموضوعية والدقة.";
         
-        const fullText = "الوسوم: " + tags + "\n\nالوصف: " + meta;
+        const fullText = "الوسوم: " + tags + "\n\nالميتا: " + meta;
         
         navigator.clipboard.writeText(fullText).then(() => {
-            alert("تم نسخ بيانات SEO بنجاح!");
+            alert("تم نسخ بيانات SEO القناة بنجاح!");
         });
     }
 </script>
