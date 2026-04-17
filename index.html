@@ -3,76 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bricolati | الواجهة الرسمية</title>
+    <title>Bricolati Blog | المدونة المرجعية</title>
     <style>
-        :root { --main-green: #2ecc71; --dark-blue: #2c3e50; }
+        :root { --main-green: #2ecc71; --dark-blue: #2c3e50; --bg: #f8fafb; }
         body { background-color: #f0f2f5; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; padding: 20px; margin: 0; }
-        .container { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); max-width: 500px; width: 100%; border-top: 8px solid var(--main-green); }
+        .container { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); max-width: 550px; width: 100%; border-top: 8px solid var(--main-green); }
         
-        header { text-align: center; margin-bottom: 20px; }
-        h1 { color: var(--dark-blue); font-size: 26px; margin: 0; }
+        header { text-align: center; margin-bottom: 25px; }
+        .logo { font-size: 26px; font-weight: bold; color: var(--dark-blue); }
 
-        /* قسم فيديو الانترو */
-        .intro-video { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 15px; overflow: hidden; background: #000; margin-bottom: 25px; border: 3px solid var(--soft-gray); }
-        .intro-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        /* شريط التصنيفات الجديد */
+        .categories { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 15px; margin-bottom: 20px; scrollbar-width: none; }
+        .cat-tag { background: #eee; padding: 6px 12px; border-radius: 20px; font-size: 12px; white-space: nowrap; cursor: pointer; color: #666; transition: 0.3s; }
+        .cat-tag:hover { background: var(--main-green); color: white; }
 
-        /* تدوينة تعريفية بالقناة */
-        .post-box { text-align: right; margin-bottom: 30px; }
-        .post-title { color: var(--dark-blue); font-size: 20px; border-right: 5px solid var(--main-green); padding-right: 12px; margin-bottom: 15px; }
-        .post-text { color: #444; line-height: 1.8; font-size: 15px; }
+        /* الفيديو الرئيسي */
+        .video-box { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 15px; overflow: hidden; background: #000; margin-bottom: 30px; }
+        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        /* زر النسخ الأخضر المصلح */
-        .save-btn { background: var(--main-green); color: white; border: none; padding: 12px; border-radius: 10px; cursor: pointer; width: 100%; font-weight: bold; font-size: 15px; transition: 0.3s; }
-        .save-btn:hover { background: #27ae60; }
+        /* تدوينات المدونة المرجعية */
+        .post-entry { border-bottom: 1px solid #eee; padding-bottom: 25px; margin-bottom: 25px; text-align: right; }
+        .post-title { color: var(--dark-blue); font-size: 20px; margin-bottom: 10px; border-right: 4px solid var(--main-green); padding-right: 12px; }
+        .post-excerpt { color: #555; line-height: 1.7; font-size: 14px; }
 
-        footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; font-size: 12px; color: #95a5a6; }
-        .legal-link { color: #3498db; cursor: pointer; text-decoration: none; margin: 0 8px; }
+        /* زر النسخ الأخضر (SEO) - كما في الصورة */
+        .copy-action-btn { background: var(--main-green); color: white; border: none; padding: 12px; border-radius: 12px; cursor: pointer; width: 100%; font-weight: bold; font-size: 15px; margin-top: 15px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .copy-action-btn:hover { background: #27ae60; }
+
+        footer { margin-top: 40px; text-align: center; border-top: 1px solid #eee; padding-top: 20px; font-size: 12px; color: #999; }
+        .footer-links { margin-bottom: 10px; }
+        .f-link { color: #3498db; margin: 0 10px; cursor: pointer; text-decoration: none; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>Bricolati Fix 🛠️</h1>
-        <p style="color: #666; font-size: 13px;">مرحباً بكم في المرجع الرسمي للإصلاحات</p>
+        <div class="logo">Bricolati Blog 🛠️</div>
+        <p style="color: #888; font-size: 13px;">المرجع المستقل للمراجعات والبيانات المرجعية</p>
     </header>
 
-    <div class="intro-video">
-        <iframe src="https://www.youtube.com/embed/Z2WxRGYfjeU?autoplay=1&mute=1" allowfullscreen></iframe>
+    <div class="categories">
+        <span class="cat-tag">كل المقالات</span>
+        <span class="cat-tag">مراجعات أدوات</span>
+        <span class="cat-tag">أكواد AliExpress</span>
+        <span class="cat-tag">شروحات إصلاح</span>
     </div>
 
-    <article class="post-box">
-        <h2 class="post-title">انطلاق منصة Bricolati المرجعية</h2>
-        <div class="post-text">
-            نحن فخورون بتقديم هويتنا البصرية الجديدة. Bricolati ليست مجرد قناة، بل هي مرجع مستقل يهدف لتطوير مهارات الإصلاح ومراجعة أفضل أدوات AliExpress بموضوعية تامة.
-        </div>
-        
-        <button class="save-btn" onclick="copySEO()">
-            نسخ بيانات SEO الواجهة 📋
-        </button>
-    </article>
+    <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/Z2WxRGYfjeU" allowfullscreen></iframe>
+    </div>
+
+    <div id="blogPosts">
+        <article class="post-entry">
+            <h2 class="post-title">دليل استخدام محطات اللحام المتقدمة</h2>
+            <p class="post-excerpt">
+                تعد محطة اللحام القلب النابض لأي ورشة إصلاح إلكترونيات. في هذا الدليل المرجعي، نشرح كيفية اختيار الأداة المناسبة بناءً على معايير الدقة والحرارة المتبعة في Bricolati.
+            </p>
+            
+            <button class="copy-action-btn" onclick="copySEO('لحام، إلكترونيات، Bricolati، مراجعة، أدوات', 'تعرف على أفضل محطات اللحام المرجعية في دليل Bricolati الشامل. مراجعات موضوعية لأدوات AliExpress لمساعدتك في اختيار الأداة الأدق لإصلاحاتك الإلكترونية.')">
+                نسخ بيانات SEO المقال 📋
+            </button>
+        </article>
+    </div>
 
     <footer>
-        <div style="margin-bottom: 10px;">
-            <span class="legal-link" onclick="alert('الخصوصية: تصفح آمن تماماً.')">الخصوصية</span> | 
-            <span class="legal-link" onclick="alert('الشروط: المحتوى مرجعي فقط.')">الشروط</span>
-        </div>
-        <p>© 2026 Bricolati Fix | Shoppress19</p>
-    </footer>
-</div>
-
-<script>
-    function copySEO() {
-        const tags = "Bricolati, AliExpress, إصلاحات، مراجعة أدوات، DIY Morocco";
-        const meta = "اكتشف عالم Bricolati للإصلاحات الاحترافية. مرجعك المستقل لمراجعة أدوات AliExpress وتطوير المهارات التقنية بأعلى معايير الموضوعية والدقة.";
-        
-        const fullText = "الوسوم: " + tags + "\n\nالميتا: " + meta;
-        
-        navigator.clipboard.writeText(fullText).then(() => {
-            alert("تم نسخ بيانات SEO القناة بنجاح!");
-        });
-    }
-</script>
-
-</body>
-</html>
+        <div class="footer-links">
+            <span class="f-link" onclick="alert('الخصوصية: لا نجمع بيانات.')">الخصوصية</span>
+            <span class="f-link" onclick="alert('الشروط: مرجع تعليمي مستقل.')">الشروط</span>
+            <span class="f
