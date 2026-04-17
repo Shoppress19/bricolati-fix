@@ -3,77 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bricolati Fix | الدليل المرجعي</title>
+    <title>Bricolati Fix | الدليل المرجعي الذكي</title>
     <style>
         :root { --main-green: #2ecc71; --dark-blue: #2c3e50; --soft-gray: #f8f9fa; }
-        body { background-color: #f0f2f5; font-family: 'Segoe UI', Tahoma, sans-serif; display: flex; justify-content: center; padding: 20px; margin: 0; }
+        body { background-color: #f0f2f5; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; padding: 20px; margin: 0; }
         .container { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); max-width: 450px; width: 100%; text-align: center; border-top: 8px solid var(--main-green); }
         
-        /* تصميم بطاقة المنتج بالصور */
+        /* شريط البحث */
+        .search-box { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; margin-bottom: 20px; box-sizing: border-box; font-size: 14px; outline: none; }
+        .search-box:focus { border-color: var(--main-green); }
+
+        /* بطاقة المنتج */
         .product-card { display: flex; align-items: center; border: 1px solid #eee; padding: 12px; border-radius: 12px; background: var(--soft-gray); margin-bottom: 15px; text-align: right; transition: 0.3s; text-decoration: none; color: inherit; }
-        .product-card:hover { transform: translateY(-3px); border-color: var(--main-green); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .product-img { width: 70px; height: 70px; border-radius: 8px; background: #ddd; margin-left: 15px; object-fit: cover; }
-        .product-info { flex: 1; }
+        .product-card:hover { transform: scale(1.02); border-color: var(--main-green); }
+        .product-img { width: 60px; height: 60px; border-radius: 8px; background: #eee; margin-left: 15px; }
         .product-info h4 { margin: 0; font-size: 15px; color: var(--dark-blue); }
         .product-info p { margin: 5px 0; font-size: 12px; color: #7f8c8d; }
-        .price-tag { color: var(--main-green); font-weight: bold; font-size: 14px; }
 
         footer { margin-top: 25px; padding-top: 15px; border-top: 1px solid #eee; font-size: 11px; color: #95a5a6; }
-        .legal-link { cursor: pointer; color: #3498db; text-decoration: none; margin: 0 5px; }
-        
-        /* النافذة المنبثقة */
-        #legal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; z-index: 1000; padding: 20px; box-sizing: border-box; }
-        .legal-modal { background: white; padding: 20px; border-radius: 15px; width: 100%; max-width: 350px; text-align: right; }
+        .legal-link { cursor: pointer; color: #3498db; margin: 0 5px; }
+
+        /* إخفاء المنتجات التي لا تطابق البحث */
+        .hidden { display: none; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1 style="font-size: 24px; color: var(--dark-blue); margin-bottom: 5px;">Bricolati Fix 🛠️</h1>
-    <p style="font-size: 13px; color: #7f8c8d; margin-bottom: 20px;">دليلك التقني المستقل لأدوات AliExpress</p>
+    <h1 style="font-size: 24px; color: var(--dark-blue);">Bricolati Fix 🛠️</h1>
+    <p style="font-size: 13px; color: #7f8c8d;">ابحث عن الأدوات والإصلاحات المرجعية</p>
 
-    <a href="رابط_المنتج_هنا" class="product-card">
-        <img src="https://via.placeholder.com/70" class="product-img" alt="Product">
-        <div class="product-info">
-            <h4>طقم مفكات الدقة PRO</h4>
-            <p>مثالي لإصلاح الهواتف والأجهزة الإلكترونية.</p>
-            <span class="price-tag">عرض على AliExpress</span>
-        </div>
-    </a>
+    <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن أداة (مثلاً: مفك، ليزر)..." onkeyup="filterProducts()">
 
-    <a href="رابط_المنتج_هنا" class="product-card">
-        <img src="https://via.placeholder.com/70" class="product-img" alt="Product">
-        <div class="product-info">
-            <h4>ميزان حرارة ليزري</h4>
-            <p>دقة عالية لفحص حرارة الأجهزة والمحركات.</p>
-            <span class="price-tag">عرض على AliExpress</span>
-        </div>
-    </a>
+    <div id="productList">
+        <a href="#" class="product-card" data-name="مفك براغي دقة">
+            <div class="product-img">🛠️</div>
+            <div class="product-info">
+                <h4>طقم مفكات Bricolati</h4>
+                <p>لإصلاح الإلكترونيات الدقيقة.</p>
+            </div>
+        </a>
+
+        <a href="#" class="product-card" data-name="ميزان ليزر حرارة">
+            <div class="product-img">🌡️</div>
+            <div class="product-info">
+                <h4>ميزان حرارة ليزري</h4>
+                <p>قياس احترافي فوري.</p>
+            </div>
+        </a>
+
+        <a href="#" class="product-card" data-name="كماشة أسلاك">
+            <div class="product-img">✂️</div>
+            <div class="product-info">
+                <h4>كماشة قطع احترافية</h4>
+                <p>أداة قوية للأعمال الكهربائية.</p>
+            </div>
+        </a>
+    </div>
 
     <footer>
-        <span class="legal-link" onclick="openLegal('الخصوصية', 'نحن لا نجمع بياناتك. الروابط الخارجية تتبع سياسة AliExpress.')">الخصوصية</span> | 
-        <span class="legal-link" onclick="openLegal('الشروط', 'هذا الموقع مرجع تقني. استخدام المعلومات على مسؤوليتك.')">الشروط</span> | 
-        <span class="legal-link" onclick="openLegal('إخلاء المسؤولية', 'قد نحصل على عمولة من الروابط لدعم المشروع.')">إخلاء المسؤولية</span>
-        <p style="margin-top: 10px;">© 2026 Shoppress19 - Bricolati</p>
+        <span class="legal-link" onclick="alert('سياسة الخصوصية: لا نجمع بياناتك.')">الخصوصية</span> | 
+        <span class="legal-link" onclick="alert('إخلاء المسؤولية: مرجع تقني مستقل.')">إخلاء المسؤولية</span>
+        <p>© 2026 Bricolati - Shoppress19</p>
     </footer>
 </div>
 
-<div id="legal-overlay" onclick="closeLegal()">
-    <div class="legal-modal" onclick="event.stopPropagation()">
-        <h4 id="legal-title"></h4>
-        <p id="legal-text" style="font-size: 13px; color: #555;"></p>
-        <button onclick="closeLegal()" style="width:100%; padding:10px; background:var(--main-green); color:white; border:none; border-radius:5px; cursor:pointer;">إغلاق</button>
-    </div>
-</div>
-
 <script>
-    function openLegal(title, text) {
-        document.getElementById('legal-title').innerText = title;
-        document.getElementById('legal-text').innerText = text;
-        document.getElementById('legal-overlay').style.display = 'flex';
-    }
-    function closeLegal() {
-        document.getElementById('legal-overlay').style.display = 'none';
+    function filterProducts() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let cards = document.getElementsByClassName('product-card');
+
+        for (let i = 0; i < cards.length; i++) {
+            let name = cards[i].getAttribute('data-name');
+            if (name.toLowerCase().includes(input)) {
+                cards[i].classList.remove('hidden');
+            } else {
+                cards[i].classList.add('hidden');
+            }
+        }
     }
 </script>
 
