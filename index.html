@@ -5,65 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bricolati Fix | الدليل المرجعي</title>
     <style>
-        :root { --main-green: #2ecc71; --dark-blue: #2c3e50; }
-        body { background-color: #f4f7f6; font-family: 'Segoe UI', Arial, sans-serif; display: flex; justify-content: center; padding: 20px; margin: 0; }
-        .container { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); max-width: 450px; width: 100%; text-align: center; border-top: 8px solid var(--main-green); }
-        h1 { color: var(--dark-blue); margin-bottom: 5px; font-size: 26px; }
-        .tag-box { margin: 15px 0; }
-        .tag { background: #eef2f3; color: #5d6d7e; padding: 4px 12px; border-radius: 15px; font-size: 11px; font-weight: bold; border: 1px solid #dcdde1; margin: 2px; display: inline-block; }
+        :root { --main-green: #2ecc71; --dark-blue: #2c3e50; --soft-gray: #f8f9fa; }
+        body { background-color: #f0f2f5; font-family: 'Segoe UI', Tahoma, sans-serif; display: flex; justify-content: center; padding: 20px; margin: 0; }
+        .container { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); max-width: 450px; width: 100%; text-align: center; border-top: 8px solid var(--main-green); }
         
-        .product-card { border: 1px solid #f0f0f0; padding: 15px; border-radius: 12px; background: #fafafa; margin-bottom: 15px; text-align: right; transition: 0.3s; }
-        .product-card:hover { border-color: var(--main-green); }
-        .product-card h4 { margin: 0; color: var(--dark-blue); }
-        .btn { color: var(--main-green); text-decoration: none; font-size: 13px; font-weight: bold; display: block; margin-top: 10px; }
+        /* تصميم بطاقة المنتج بالصور */
+        .product-card { display: flex; align-items: center; border: 1px solid #eee; padding: 12px; border-radius: 12px; background: var(--soft-gray); margin-bottom: 15px; text-align: right; transition: 0.3s; text-decoration: none; color: inherit; }
+        .product-card:hover { transform: translateY(-3px); border-color: var(--main-green); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .product-img { width: 70px; height: 70px; border-radius: 8px; background: #ddd; margin-left: 15px; object-fit: cover; }
+        .product-info { flex: 1; }
+        .product-info h4 { margin: 0; font-size: 15px; color: var(--dark-blue); }
+        .product-info p { margin: 5px 0; font-size: 12px; color: #7f8c8d; }
+        .price-tag { color: var(--main-green); font-weight: bold; font-size: 14px; }
 
-        footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; font-size: 12px; color: #95a5a6; }
-        .legal-link { cursor: pointer; color: #95a5a6; text-decoration: underline; margin: 0 5px; }
-
-        /* نافذة المعلومات القانونية */
-        #legal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 1000; }
-        .legal-modal { background: white; padding: 25px; border-radius: 15px; max-width: 90%; width: 350px; text-align: right; position: relative; }
-        .close-btn { background: var(--main-green); color: white; border: none; padding: 5px 15px; border-radius: 5px; cursor: pointer; margin-top: 15px; width: 100%; }
+        footer { margin-top: 25px; padding-top: 15px; border-top: 1px solid #eee; font-size: 11px; color: #95a5a6; }
+        .legal-link { cursor: pointer; color: #3498db; text-decoration: none; margin: 0 5px; }
+        
+        /* النافذة المنبثقة */
+        #legal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; z-index: 1000; padding: 20px; box-sizing: border-box; }
+        .legal-modal { background: white; padding: 20px; border-radius: 15px; width: 100%; max-width: 350px; text-align: right; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Bricolati Fix 🛠️</h1>
-    <p style="color: #7f8c8d; font-size: 14px;">الدليل المرجعي المستقل لإصلاحات وتطويرات AliExpress.</p>
+    <h1 style="font-size: 24px; color: var(--dark-blue); margin-bottom: 5px;">Bricolati Fix 🛠️</h1>
+    <p style="font-size: 13px; color: #7f8c8d; margin-bottom: 20px;">دليلك التقني المستقل لأدوات AliExpress</p>
 
-    <div class="tag-box">
-        <span class="tag">#Shoppress19</span> <span class="tag">#Bricolati</span>
-        <span class="tag">#Fix</span> <span class="tag">#AliExpress</span>
-    </div>
+    <a href="رابط_المنتج_هنا" class="product-card">
+        <img src="https://via.placeholder.com/70" class="product-img" alt="Product">
+        <div class="product-info">
+            <h4>طقم مفكات الدقة PRO</h4>
+            <p>مثالي لإصلاح الهواتف والأجهزة الإلكترونية.</p>
+            <span class="price-tag">عرض على AliExpress</span>
+        </div>
+    </a>
 
-    <h3 style="margin: 25px 0 15px; color: var(--dark-blue);">المقترحات المرجعية</h3>
-
-    <div class="product-card">
-        <h4>📦 طقم مفكات Bricolati Precision</h4>
-        <p style="font-size: 13px; color: #666;">أداة احترافية للإصلاحات التقنية الدقيقة.</p>
-        <a href="#" class="btn">عرض التفاصيل ←</a>
-    </div>
-
-    <div class="product-card">
-        <h4>⚡ كابلات فحص الأداء</h4>
-        <p style="font-size: 13px; color: #666;">حلول مبتكرة لتحسين كفاءة الأجهزة.</p>
-        <a href="#" class="btn">عرض التفاصيل ←</a>
-    </div>
+    <a href="رابط_المنتج_هنا" class="product-card">
+        <img src="https://via.placeholder.com/70" class="product-img" alt="Product">
+        <div class="product-info">
+            <h4>ميزان حرارة ليزري</h4>
+            <p>دقة عالية لفحص حرارة الأجهزة والمحركات.</p>
+            <span class="price-tag">عرض على AliExpress</span>
+        </div>
+    </a>
 
     <footer>
         <span class="legal-link" onclick="openLegal('الخصوصية', 'نحن لا نجمع بياناتك. الروابط الخارجية تتبع سياسة AliExpress.')">الخصوصية</span> | 
         <span class="legal-link" onclick="openLegal('الشروط', 'هذا الموقع مرجع تقني. استخدام المعلومات على مسؤوليتك.')">الشروط</span> | 
         <span class="legal-link" onclick="openLegal('إخلاء المسؤولية', 'قد نحصل على عمولة من الروابط لدعم المشروع.')">إخلاء المسؤولية</span>
-        <p>© 2026 Bricolati Fix</p>
+        <p style="margin-top: 10px;">© 2026 Shoppress19 - Bricolati</p>
     </footer>
 </div>
 
-<div id="legal-overlay">
-    <div class="legal-modal">
-        <h4 id="legal-title" style="color: var(--dark-blue); margin-top: 0;"></h4>
-        <p id="legal-text" style="font-size: 14px; color: #555; line-height: 1.6;"></p>
-        <button class="close-btn" onclick="closeLegal()">فهمت ذلك</button>
+<div id="legal-overlay" onclick="closeLegal()">
+    <div class="legal-modal" onclick="event.stopPropagation()">
+        <h4 id="legal-title"></h4>
+        <p id="legal-text" style="font-size: 13px; color: #555;"></p>
+        <button onclick="closeLegal()" style="width:100%; padding:10px; background:var(--main-green); color:white; border:none; border-radius:5px; cursor:pointer;">إغلاق</button>
     </div>
 </div>
 
