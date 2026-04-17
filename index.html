@@ -3,96 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bricolati Fix | المرجع التقني</title>
+    <title>Bricolati | المدونة المرجعية التقنية</title>
     <style>
-        :root { --main-green: #2ecc71; --dark-blue: #2c3e50; --bg: #f4f7f6; }
-        body { background-color: var(--bg); font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; padding: 20px; margin: 0; }
-        .container { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 480px; width: 100%; border-top: 8px solid var(--main-green); }
+        :root { --main-green: #2ecc71; --dark-blue: #2c3e50; --bg: #fdfdfd; }
+        body { background-color: #f0f2f5; font-family: 'Segoe UI', Tahoma, sans-serif; display: flex; justify-content: center; padding: 20px; margin: 0; }
+        .container { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); max-width: 600px; width: 100%; border-top: 8px solid var(--main-green); }
         
-        h1 { color: var(--dark-blue); text-align: center; margin-bottom: 5px; }
-        .subtitle { text-align: center; color: #7f8c8d; font-size: 14px; margin-bottom: 25px; }
+        header { text-align: center; border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 25px; }
+        h1 { color: var(--dark-blue); margin: 0; font-size: 26px; }
 
-        /* البحث */
-        .search-box { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; margin-bottom: 20px; box-sizing: border-box; outline: none; }
+        /* قسم الفيديو */
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; background: #000; margin-bottom: 25px; border: 2px solid #eee; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        /* قائمة المنتجات */
-        .product-card { border: 1px solid #eee; padding: 15px; border-radius: 12px; background: #fafafa; margin-bottom: 15px; text-align: right; }
-        .product-card h4 { margin: 0 0 10px 0; color: var(--dark-blue); }
-        .copy-btn { background: var(--dark-blue); color: white; border: none; padding: 7px 15px; border-radius: 5px; font-size: 12px; cursor: pointer; transition: 0.3s; width: 100%; margin-top: 10px; }
-        .copy-btn:hover { background: var(--main-green); }
-
-        /* قسم التواصل السريع (بدون طلب معلومات) */
-        .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
-        .social-btn { text-decoration: none; background: #eee; color: var(--dark-blue); padding: 8px 15px; border-radius: 8px; font-size: 13px; font-weight: bold; transition: 0.3s; }
-        .social-btn:hover { background: var(--main-green); color: white; }
+        /* المدونة */
+        .blog-post { margin-bottom: 40px; text-align: right; border-bottom: 1px solid #f1f1f1; padding-bottom: 20px; }
+        .post-title { color: var(--dark-blue); font-size: 19px; margin-bottom: 10px; border-right: 4px solid var(--main-green); padding-right: 12px; }
+        .post-content { color: #555; line-height: 1.7; font-size: 14px; }
+        
+        /* أداة الحفظ/النسخ (الإيقونة الخضراء) */
+        .seo-box { background: #f9f9f9; padding: 15px; border-radius: 10px; margin-top: 15px; border: 1px dashed #ccc; text-align: center; }
+        .save-btn { background: var(--main-green); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 14px; transition: 0.3s; width: 100%; }
+        .save-btn:hover { background: #27ae60; transform: scale(1.01); }
 
         /* الفوتر القانوني */
-        footer { margin-top: 35px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; font-size: 12px; color: #95a5a6; }
-        .legal-link { color: #3498db; cursor: pointer; margin: 0 8px; text-decoration: none; }
-        
-        /* النافذة المنبثقة */
-        #legal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; z-index: 1000; }
-        .modal { background: white; padding: 25px; border-radius: 15px; max-width: 350px; width: 90%; text-align: right; position: relative; }
+        footer { margin-top: 30px; text-align: center; border-top: 1px solid #eee; padding-top: 20px; font-size: 12px; color: #999; }
+        .legal-link { color: #3498db; cursor: pointer; text-decoration: none; margin: 0 10px; }
+
+        /* Modal */
+        #modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; z-index: 1000; }
+        .modal { background: white; padding: 25px; border-radius: 12px; max-width: 380px; width: 90%; text-align: right; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Bricolati Fix 🛠️</h1>
-    <p class="subtitle">دليل AliExpress المرجعي المستقل</p>
+    <header>
+        <h1>Bricolati Blog 🛠️</h1>
+        <p style="color: #888; font-size: 13px;">المرجع المستقل للمراجعات التقنية والفيديو</p>
+    </header>
 
-    <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن أداة أو كود..." onkeyup="filterContent()">
-
-    <div id="contentList">
-        <div class="product-card" data-name="مفك براغي">
-            <h4>طقم مفكات Bricolati PRO</h4>
-            <p style="font-size: 13px; color: #666;">مرجع تقني لأدوات الفك الدقيق.</p>
-            <button class="copy-btn" onclick="copyData('مفك، أدوات، Bricolati', 'وصف SEO للمنتج...')">نسخ بيانات SEO 📋</button>
-        </div>
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
     </div>
 
-    <h3 style="text-align: center; font-size: 16px; color: var(--dark-blue); margin-top: 30px;">للمتابعة أو الاستفسار</h3>
-    <div class="social-links">
-        <a href="https://t.me/yourusername" class="social-btn">تليجرام ✈️</a>
-        <a href="mailto:shoppress19@email.com" class="social-btn">إيميل 📧</a>
+    <div class="blog-post">
+        <h2 class="post-title">أدوات الإصلاح الدقيقة: هل تستحق الشراء؟</h2>
+        <div class="post-content">
+            في هذا المقال، نستعرض أحدث طقم مفكات من AliExpress. التصميم مريح جداً لليد، والصلابة ممتازة للاستخدام اليومي...
+        </div>
+        
+        <div class="seo-box">
+            <button class="save-btn" onclick="copySEO('مفكات، أدوات، AliExpress، Bricolati', 'مراجعة تفصيلية لأطقم المفكات الدقيقة على Bricolati. اكتشف أفضل الأدوات لإصلاح أجهزتك الإلكترونية بدقة واحترافية عالية مع روابط AliExpress المباشرة.')">
+                نسخ بيانات SEO المقال 📋
+            </button>
+        </div>
     </div>
 
     <footer>
-        <div style="margin-bottom: 10px;">
-            <span class="legal-link" onclick="showLegal('الخصوصية', 'نحن نحترم خصوصيتك تماماً؛ لا نقوم بجمع أي بيانات شخصية أو ملفات تعريف ارتباط.')">الخصوصية</span> | 
-            <span class="legal-link" onclick="showLegal('الشروط', 'جميع المعلومات هي لأغراض تعليمية ومرجعية فقط.')">الشروط</span> | 
-            <span class="legal-link" onclick="showLegal('إخلاء المسؤولية', 'قد نستخدم روابط أفلييت لدعم استمرار هذا المرجع.')">إخلاء المسؤولية</span>
-        </div>
-        <p>© 2026 Bricolati Fix | Shoppress19</p>
+        <span class="legal-link" onclick="openM('الخصوصية', 'لا نجمع أي بيانات من الزوار.')">الخصوصية</span> |
+        <span class="legal-link" onclick="openM('إخلاء المسؤولية', 'نحن مرجع مستقل والروابط قد تدعم الموقع.')">إخلاء المسؤولية</span>
+        <p style="margin-top: 15px;">© 2026 Bricolati Fix</p>
     </footer>
 </div>
 
-<div id="legal-overlay" onclick="this.style.display='none'">
+<div id="modal-overlay" onclick="this.style.display='none'">
     <div class="modal" onclick="event.stopPropagation()">
         <h4 id="m-title"></h4>
-        <p id="m-text" style="font-size: 14px; color: #555; line-height: 1.6;"></p>
-        <button onclick="document.getElementById('legal-overlay').style.display='none'" style="width:100%; padding:10px; background:var(--main-green); color:white; border:none; border-radius:5px; cursor:pointer; margin-top: 10px;">إغلاق</button>
+        <p id="m-text" style="line-height: 1.6; color: #555; font-size: 14px;"></p>
+        <button onclick="document.getElementById('modal-overlay').style.display='none'" style="width:100%; padding:10px; background:var(--main-green); color:white; border:none; border-radius:5px; cursor:pointer;">إغلاق</button>
     </div>
 </div>
 
 <script>
-    function filterContent() {
-        let val = document.getElementById('searchInput').value.toLowerCase();
-        let cards = document.getElementsByClassName('product-card');
-        for(let card of cards) {
-            card.style.display = card.getAttribute('data-name').includes(val) ? 'block' : 'none';
+    // وظيفة النسخ المصلحة
+    function copySEO(tags, meta) {
+        const textToCopy = "الوسوم: " + tags + "\n\nالوصف: " + meta;
+        
+        // طريقة حديثة للنسخ تضمن العمل على الهواتف والمتصفحات
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(textToCopy).then(function() {
+                alert("تم النسخ بنجاح! يمكنك الآن لصق البيانات في مدونتك.");
+            }, function(err) {
+                console.error('تعذر النسخ: ', err);
+            });
+        } else {
+            // حل احتياطي للمتصفحات القديمة
+            alert("عذراً، متصفحك لا يدعم النسخ التلقائي.");
         }
     }
 
-    function copyData(tags, meta) {
-        navigator.clipboard.writeText("الوسوم: " + tags + "\nالميتا: " + meta);
-        alert("تم نسخ البيانات!");
-    }
-
-    function showLegal(title, text) {
-        document.getElementById('m-title').innerText = title;
-        document.getElementById('m-text').innerText = text;
-        document.getElementById('legal-overlay').style.display = 'flex';
+    function openM(t, txt) {
+        document.getElementById('m-title').innerText = t;
+        document.getElementById('m-text').innerText = txt;
+        document.getElementById('modal-overlay').style.display = 'flex';
     }
 </script>
 
