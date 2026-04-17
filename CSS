@@ -1,1 +1,32 @@
 style.css
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bricolati | دليل المنتج المرجعي</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="product-reference-guide">
+        <h1>بريكولاتي (Bricolati) - دليل الإصلاح 🛠️</h1>
+        <p>هذا المستودع يعمل كمرجع تقني مستقل لإصلاحات وتطويرات مشروع Bricolati.</p>
+
+        <h3>المواصفات الفنية:</h3>
+        <ul>
+            <li><strong>الحالة:</strong> قيد البناء النشط</li>
+            <li><strong>المنصة:</strong> GitHub</li>
+            <li><strong>المطور:</strong> Shoppress19</li>
+        </ul>
+
+        <div class="product-tags">
+            <span class="tag">#Bricolati</span>
+            <span class="tag">#GitHub</span>
+            <span class="tag">#Fix</span>
+            <span class="tag">#OpenSource</span>
+        </div>
+    </div>
+
+</body>
+</html>
