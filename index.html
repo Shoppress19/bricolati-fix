@@ -3,57 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bricolati Tools - متخصصون في إصلاح وصيانة أدوات Makita و Bosch في الدروة. خبرة احترافية وقطع غيار أصلية.">
-    <title>Bricolati Tools | صيانة Makita و Bosch الاحترافية</title>
+    <title>Bricolati Tools - صيانة Makita و Bosch</title>
     <style>
-        :root { --primary: #e67e22; --dark: #1a1a1a; --light: #f4f4f4; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--light); color: #333; margin: 0; line-height: 1.6; }
-        header { background: var(--dark); color: white; padding: 20px; text-align: center; border-bottom: 4px solid var(--primary); }
-        .container { max-width: 800px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        h1, h2 { color: var(--primary); }
-        .btn-wa { background: #25d366; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: bold; font-size: 1.2em; margin-top: 20px; }
-        .legal-section { border-top: 2px solid #eee; margin-top: 40px; padding-top: 20px; font-size: 0.9em; color: #666; }
-        footer { background: var(--dark); color: white; text-align: center; padding: 20px; margin-top: 40px; }
-        ul { list-style: none; padding: 0; }
-        li { margin-bottom: 10px; padding-right: 25px; position: relative; }
-        li::before { content: '🛠️'; position: absolute; right: 0; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a1a; color: white; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        .card { background: #2d2d2d; padding: 30px; border-radius: 20px; border: 2px solid #e67e22; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); width: 100%; max-width: 450px; }
+        h1 { color: #e67e22; margin-bottom: 5px; font-size: 2.2em; }
+        .icon { font-size: 40px; margin-bottom: 10px; }
+        .services { text-align: right; margin: 20px 0; list-style: none; padding: 0; }
+        .services li { margin: 12px 0; font-size: 1.1em; border-bottom: 1px solid #3d3d3d; padding-bottom: 5px; }
+        .btn-wa { background-color: #25d366; color: white; padding: 18px 30px; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: bold; font-size: 1.3em; transition: 0.3s; margin-top: 15px; width: 80%; }
+        
+        /* قسم الصفحات القانونية */
+        .legal-box { margin-top: 30px; padding: 15px; background: #252525; border-radius: 10px; font-size: 0.85em; color: #bbb; text-align: right; width: 100%; max-width: 450px; }
+        .legal-box h3 { color: #e67e22; margin-top: 10px; font-size: 1em; }
+        footer { margin-top: 20px; color: #666; font-size: 0.8em; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Bricolati Tools 🛠️</h1>
-    <p>الاحترافية في صيانة الأدوات الكهربائية - الدروة</p>
-</header>
-
-<div class="container">
-    <section id="services">
-        <h2>خدماتنا المتخصصة</h2>
-        <ul>
-            <li>إصلاح شامل لجميع معدات <strong>Makita</strong> و <strong>Bosch</strong> الأصلية.</li>
-            <li>تغيير الكربون، إصلاح المحركات، وفحص الدوائر الإلكترونية.</li>
-            <li>تجديد بطاريات الليثيوم وفحص كفاءة الشحن.</li>
-            <li>ضمان على جودة الإصلاح واستخدام قطع غيار موثوقة.</li>
-        </ul>
-        <center>
-            <a href="https://wa.me/212606354549" class="btn-wa">إرسال طلب إصلاح عبر واتساب ✅</a>
-        </center>
-    </section>
-
-    <section id="legal" class="legal-section">
-        <h2>المعلومات القانونية والشروط</h2>
-        <h3>1. سياسة الخصوصية</h3>
-        <p>نحن في Bricolati نلتزم بحماية بياناتك. المعلومات التي تقدمها عبر الواتساب تُستخدم فقط لغرض التواصل بخصوص طلبات الإصلاح ولا يتم مشاركتها مع أي طرف ثالث.</p>
+    <div class="card">
+        <div class="icon">🛠️</div>
+        <h1>Bricolati Tools</h1>
+        <p>مركز صيانة الأدوات الكهربائية - الدروة</p>
         
-        <h3>2. شروط الخدمة والضمان</h3>
-        <p>يتم فحص الجهاز وتقديم تقدير التكلفة قبل البدء. الضمان يشمل العيب الذي تم إصلاحه فقط ولمدة محددة يتم الاتفاق عليها عند الاستلام.</p>
-    </section>
-</div>
+        <ul class="services">
+            <li>✅ إصلاح احترافي لمعدات Makita و Bosch</li>
+            <li>✅ فحص وتجديد بطاريات الليثيوم</li>
+            <li>✅ قطع غيار أصلية وضمان على الإصلاح</li>
+            <li>✅ خبرة تقنية متخصصة في الدوائر الكهربائية</li>
+        </ul>
+        
+        <a href="https://wa.me/212606354549" class="btn-wa">تواصل معنا عبر واتساب ✅</a>
+    </div>
 
-<footer>
-    <p>© 2026 Bricolati Tools - جميع الحقوق محفوظة</p>
-    <small>الدروة، المغرب</small>
-</footer>
+    <div class="legal-box">
+        <h3>📄 سياسة الخصوصية</h3>
+        <p>نحن نحترم خصوصيتك. البيانات التي تشاركها معنا عبر واتساب تُستخدم فقط لغرض التنسيق لإصلاح معداتك ولا نطلب أي بيانات بنكية أو سرية عبر الموقع.</p>
+        
+        <h3>⚖️ الشروط والأحكام</h3>
+        <p>يتم فحص الأدوات وتقديم تقدير للإصلاح. الضمان يسري على قطع الغيار المستبدلة والعيوب التي تم إصلاحها فقط وفقاً للاتفاق عند الاستلام.</p>
+        
+        <h3>📍 الموقع</h3>
+        <p>الدروة، المغرب - متخصصون في خدمة الحرفيين والشركات.</p>
+    </div>
+
+    <footer>
+        © 2026 Bricolati Tools. جميع الحقوق محفوظة.
+    </footer>
 
 </body>
 </html>
