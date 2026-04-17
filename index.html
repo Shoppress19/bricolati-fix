@@ -3,68 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bricolati Fix | المرجع التقني الشامل</title>
+    <title>Bricolati Fix | المرجع الشامل</title>
     <style>
-        :root { --main-green: #2ecc71; --dark-blue: #2c3e50; --bg: #f8fafb; }
+        :root { --main-green: #2ecc71; --dark-blue: #2c3e50; --bg: #f4f7f6; }
         body { background-color: var(--bg); font-family: 'Segoe UI', Tahoma, sans-serif; display: flex; justify-content: center; padding: 20px; margin: 0; }
-        .container { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); max-width: 480px; width: 100%; border-top: 8px solid var(--main-green); }
+        .container { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 500px; width: 100%; border-top: 8px solid var(--main-green); }
         
-        h1 { color: var(--dark-blue); font-size: 24px; margin-bottom: 10px; text-align: center; }
-        .section-title { border-right: 4px solid var(--main-green); padding-right: 10px; margin: 30px 0 15px; color: var(--dark-blue); font-size: 18px; text-align: right; }
+        h1 { color: var(--dark-blue); text-align: center; margin-bottom: 5px; }
+        .subtitle { text-align: center; color: #7f8c8d; font-size: 14px; margin-bottom: 20px; }
 
-        /* تنسيق الأسئلة الشائعة */
-        .faq-item { background: #f9f9f9; border-radius: 8px; margin-bottom: 10px; padding: 12px; text-align: right; cursor: pointer; transition: 0.3s; }
-        .faq-item:hover { background: #f0f0f0; }
-        .faq-question { font-weight: bold; font-size: 14px; color: var(--dark-blue); }
-        .faq-answer { font-size: 13px; color: #666; margin-top: 8px; display: none; border-top: 1px solid #eee; padding-top: 8px; }
+        /* البحث */
+        .search-box { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; margin-bottom: 20px; box-sizing: border-box; outline: none; }
 
-        /* نموذج اتصل بنا */
-        .contact-form { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
-        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; box-sizing: border-box; outline: none; }
-        .contact-form input:focus { border-color: var(--main-green); }
-        .send-btn { background: var(--main-green); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .send-btn:hover { background: #27ae60; }
+        /* بطاقات المنتجات */
+        .product-card { border: 1px solid #eee; padding: 15px; border-radius: 12px; background: #fafafa; margin-bottom: 15px; text-align: right; }
+        .product-card h4 { margin: 0 0 10px 0; color: var(--dark-blue); }
+        .copy-btn { background: var(--dark-blue); color: white; border: none; padding: 6px 12px; border-radius: 5px; font-size: 11px; cursor: pointer; transition: 0.3s; }
+        .copy-btn:hover { background: var(--main-green); }
 
-        footer { margin-top: 40px; text-align: center; font-size: 11px; color: #999; border-top: 1px solid #eee; padding-top: 20px; }
+        /* الأسئلة الشائعة */
+        .faq-item { background: #f9f9f9; padding: 10px; border-radius: 8px; margin-top: 10px; cursor: pointer; text-align: right; }
+        .faq-answer { display: none; font-size: 13px; color: #666; padding-top: 8px; border-top: 1px solid #ddd; margin-top: 5px; }
+
+        /* الفوتر والصفحات القانونية */
+        footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; font-size: 12px; }
+        .legal-link { color: #3498db; cursor: pointer; text-decoration: none; margin: 0 5px; }
+        
+        /* النافذة المنبثقة للقوانين */
+        #legal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; z-index: 1000; }
+        .modal { background: white; padding: 20px; border-radius: 15px; max-width: 350px; width: 90%; text-align: right; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <h1>Bricolati Fix 🛠️</h1>
-    <p style="text-align: center; font-size: 14px; color: #7f8c8d;">المرجع المستقل للإصلاحات الذكية وأدوات AliExpress.</p>
+    <p class="subtitle">دليل AliExpress المرجعي | تطوير Shoppress19</p>
 
-    <div class="section-title">الأسئلة الشائعة (FAQ)</div>
-    <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">هل تبيعون هذه الأدوات مباشرة؟</div>
-        <div class="faq-answer">لا، نحن مرجع تقني مستقل. نقوم بمراجعة وتجربة الأدوات وتوفير روابط الحصول عليها من AliExpress لضمان الجودة.</div>
-    </div>
-    <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">كيف أتأكد من جودة المنتج المذكور؟</div>
-        <div class="faq-answer">جميع الأدوات في قائمة Bricolati تخضع لتقييم بناءً على معايير الاستخدام الاحترافي وسهولة الإصلاح.</div>
+    <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن أداة أو كود..." onkeyup="filterContent()">
+
+    <div id="contentList">
+        <div class="product-card" data-name="مفك براغي">
+            <h4>طقم مفكات Bricolati PRO</h4>
+            <p style="font-size: 12px;">مرجع شامل لأدوات الفك والتركيب الدقيقة.</p>
+            <button class="copy-btn" onclick="copyData('وسوم مفكات', 'وصف الميتا للمفكات...')">نسخ SEO 📋</button>
+        </div>
+
+        <div class="product-card" data-name="ميزان ليزر">
+            <h4>ميزان ليزر رقمي</h4>
+            <p style="font-size: 12px;">أداة قياس احترافية للمشاريع الهندسية.</p>
+            <button class="copy-btn" onclick="copyData('وسوم ليزر', 'وصف ميتا ليزر...')">نسخ SEO 📋</button>
+        </div>
     </div>
 
-    <div class="section-title">اتصل بنا</div>
-    <form class="contact-form" onsubmit="event.preventDefault(); alert('تم استلام رسالتك بنجاح! سنرد عليك قريباً.');">
-        <input type="text" placeholder="الاسم الكامل" required>
-        <input type="email" placeholder="البريد الإلكتروني" required>
-        <textarea rows="4" placeholder="كيف يمكننا مساعدتك؟" required></textarea>
-        <button type="submit" class="send-btn">إرسال الرسالة</button>
-    </form>
+    <h3 style="text-align: right; font-size: 16px;">الأسئلة الشائعة</h3>
+    <div class="faq-item" onclick="this.querySelector('.faq-answer').style.display = this.querySelector('.faq-answer').style.display === 'block' ? 'none' : 'block'">
+        <div style="font-weight: bold; font-size: 14px;">ما هو هدف الموقع؟</div>
+        <div class="faq-answer">توفير مرجع موضوعي ومستقل لأدوات AliExpress وحلول الإصلاح.</div>
+    </div>
 
     <footer>
-        <div style="margin-bottom: 10px;">
-            <span>الخصوصية</span> | <span>الشروط</span> | <span>إخلاء المسؤولية</span>
-        </div>
-        <p>© 2026 Bricolati Fix - تطوير Shoppress19</p>
+        <span class="legal-link" onclick="showLegal('الخصوصية', 'لا نجمع بيانات شخصية، والروابط تتبع سياسة AliExpress.')">الخصوصية</span> | 
+        <span class="legal-link" onclick="showLegal('الشروط', 'استخدام المعلومات على مسؤوليتك الخاصة كمرجع تعليمي.')">الشروط</span> | 
+        <span class="legal-link" onclick="showLegal('إخلاء المسؤولية', 'قد نحصل على عمولة من روابط الأفلييت لدعم الموقع.')">إخلاء المسؤولية</span>
+        <p style="margin-top: 15px;">© 2026 Bricolati Fix</p>
     </footer>
 </div>
 
+<div id="legal-overlay" onclick="this.style.display='none'">
+    <div class="modal" onclick="event.stopPropagation()">
+        <h4 id="m-title"></h4>
+        <p id="m-text" style="font-size: 14px; color: #555;"></p>
+        <button onclick="document.getElementById('legal-overlay').style.display='none'" style="width:100%; padding:10px; background:var(--main-green); color:white; border:none; border-radius:5px; cursor:pointer;">إغلاق</button>
+    </div>
+</div>
+
 <script>
-    function toggleFaq(element) {
-        const answer = element.querySelector('.faq-answer');
-        const isVisible = answer.style.display === 'block';
-        answer.style.display = isVisible ? 'none' : 'block';
+    // وظيفة البحث
+    function filterContent() {
+        let val = document.getElementById('searchInput').value.toLowerCase();
+        let cards = document.getElementsByClassName('product-card');
+        for(let card of cards) {
+            card.style.display = card.getAttribute('data-name').includes(val) ? 'block' : 'none';
+        }
+    }
+
+    // وظيفة النسخ
+    function copyData(tags, meta) {
+        navigator.clipboard.writeText("الوسوم: " + tags + "\nالميتا: " + meta);
+        alert("تم نسخ بيانات SEO!");
+    }
+
+    // وظيفة إظهار القوانين
+    function showLegal(title, text) {
+        document.getElementById('m-title').innerText = title;
+        document.getElementById('m-text').innerText = text;
+        document.getElementById('legal-overlay').style.display = 'flex';
     }
 </script>
 
