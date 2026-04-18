@@ -3,70 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bricolati Fix | المرجع القانوني</title>
+    <title>Bricolati Fix | الواجهة القانونية</title>
     <style>
-        body { background: #f0f2f5; font-family: sans-serif; margin: 0; padding: 15px; display: flex; justify-content: center; }
-        .container { background: white; width: 100%; max-width: 450px; border-radius: 20px; padding: 20px; border-top: 10px solid #2ecc71; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; }
-        .video { background: #000; border-radius: 15px; overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0; margin: 20px 0; }
-        .video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .post { text-align: right; border-right: 5px solid #2ecc71; padding-right: 12px; margin-bottom: 25px; }
-        .btn-green { background: #2ecc71; color: white; border: none; width: 100%; padding: 15px; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 16px; }
-        .legal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 25px; border-top: 1px solid #eee; padding-top: 20px; }
-        .legal-item { background: #f9f9f9; padding: 12px; border-radius: 10px; font-size: 12px; color: #3498db; border: 1px solid #ddd; cursor: pointer; }
-        /* نافذة التفاصيل */
-        #popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; }
-        .popup-box { background: white; padding: 20px; border-radius: 15px; width: 85%; max-width: 400px; text-align: right; }
+        body { background: #f4f7f6; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 15px; display: flex; justify-content: center; }
+        .card { background: white; width: 100%; max-width: 450px; border-radius: 25px; padding: 25px; border-top: 10px solid #2ecc71; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; }
+        .video-box { background: #000; border-radius: 20px; overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0; margin-bottom: 25px; }
+        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .content-area { text-align: right; border-right: 5px solid #2ecc71; padding-right: 15px; margin-bottom: 30px; }
+        .btn-main { background: #2ecc71; color: white; border: none; width: 100%; padding: 15px; border-radius: 15px; font-weight: bold; font-size: 16px; cursor: pointer; }
+        .legal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; }
+        .legal-btn { background: #f9f9f9; padding: 12px; border-radius: 10px; font-size: 12px; color: #3498db; border: 1px solid #eee; cursor: pointer; transition: 0.3s; }
+        .legal-btn:hover { background: #f0f0f0; }
+        /* نافذة المعلومات التفصيلية */
+        #legalModal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; justify-content: center; align-items: center; padding: 20px; }
+        .modal-content { background: white; padding: 25px; border-radius: 20px; width: 100%; max-width: 400px; text-align: right; }
+        .modal-body { font-size: 13px; color: #444; line-height: 1.8; max-height: 350px; overflow-y: auto; margin: 15px 0; border-top: 1px solid #eee; padding-top: 15px; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1 style="color:#2c3e50; margin:0;">Bricolati Fix 🛠️</h1>
-    <p style="color:#888; font-size:12px;">المرجع المستقل للمراجعات والتقنية</p>
+<div class="card">
+    <h1 style="color:#2c3e50; margin:0 0 5px 0;">Bricolati Fix 🛠️</h1>
+    <p style="color:#888; font-size:12px; margin-bottom:20px;">المرجع المستقل للمراجعات والتقنية</p>
 
-    <div class="video">
+    <div class="video-box">
         <iframe src="https://www.youtube.com/embed/Z2WxRGYfjeU" allowfullscreen></iframe>
     </div>
 
-    <div class="post">
-        <h2 style="font-size:18px; color:#2c3e50;">انطلاق الواجهة القانونية</h2>
-        <p style="font-size:13px; color:#555; line-height:1.6;">نقدم لك أدق المراجعات للأدوات التقنية مع التزام كامل بالشفافية القانونية والبيانات المرجعية الدقيقة.</p>
+    <div class="content-area">
+        <h2 style="font-size:20px; color:#2c3e50; margin:0 0 10px 0;">انطلاق الواجهة القانونية</h2>
+        <p style="font-size:14px; color:#555;">نقدم لك مراجعات دقيقة للأدوات التقنية مع التزام كامل بالشفافية القانونية والبيانات المرجعية.</p>
     </div>
 
-    <button class="btn-green" onclick="alert('تم نسخ بيانات SEO بنجاح!')">نسخ بيانات SEO الواجهة 📋</button>
+    <button class="btn-main" onclick="alert('تم نسخ بيانات SEO بنجاح!')">نسخ بيانات SEO الواجهة 📋</button>
 
     <div class="legal-grid">
-        <div class="legal-item" onclick="show('p')">🛡️ الخصوصية</div>
-        <div class="legal-item" onclick="show('t')">⚖️ الشروط</div>
-        <div class="legal-item" onclick="show('d')">⚠️ إخلاء المسؤولية</div>
-        <div class="legal-item" onclick="show('c')">🍪 الكوكيز</div>
+        <div class="legal-btn" onclick="openLegal('privacy')">🛡️ الخصوصية</div>
+        <div class="legal-btn" onclick="openLegal('terms')">⚖️ الشروط</div>
+        <div class="legal-btn" onclick="openLegal('disclaimer')">⚠️ إخلاء المسؤولية</div>
+        <div class="legal-btn" onclick="openLegal('cookies')">🍪 الكوكيز</div>
     </div>
     
-    <p style="font-size:10px; color:#ccc; margin-top:20px;">© 2026 Bricolati Fix | Shoppress19</p>
+    <p style="font-size: 10px; color: #ccc; margin-top: 25px;">© 2026 Bricolati Fix | Shoppress19</p>
 </div>
 
-<div id="popup" onclick="this.style.display='none'">
-    <div class="popup-box" onclick="event.stopPropagation()">
-        <h3 id="p-title" style="color:#2c3e50; border-bottom: 2px solid #2ecc71; padding-bottom: 10px; margin-top:0;"></h3>
-        <p id="p-body" style="font-size:13px; color:#444; line-height:1.7;"></p>
-        <button class="btn-green" onclick="document.getElementById('popup').style.display='none'">إغلاق</button>
+<div id="legalModal" onclick="this.style.display='none'">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <h3 id="modalTitle" style="color:#2c3e50; margin:0;"></h3>
+        <div id="modalBody" class="modal-body"></div>
+        <button class="btn-main" onclick="document.getElementById('legalModal').style.display='none'">إغلاق وقبول</button>
     </div>
 </div>
 
 <script>
-    const info = {
-        p: ["سياسة الخصوصية", "نحن لا نجمع أي بيانات شخصية. تصفحك آمن تماماً، والبيانات التقنية تستخدم فقط لتحسين تجربة المستخدم المرجعية."],
-        t: ["الشروط والأحكام", "المحتوى مخصص للأغراض التعليمية. يمنع نسخ المراجعات دون ذكر المصدر الرسمي Bricolati Fix."],
-        d: ["إخلاء المسؤولية", "هذا الموقع مرجع مستقل. الروابط المنشورة لـ AliExpress قد تكون روابط تابعة تمنحنا عمولة بسيطة لدعم استمرار المراجعات."],
-        c: ["ملفات الكوكيز", "نستخدم الكوكيز لتحسين سرعة الموقع وتحليل حركة الزوار بشكل مجهول الهوية لضمان جودة المحتوى."]
-    };
-
-    function show(id) {
-        document.getElementById('p-title').innerText = info[id][0];
-        document.getElementById('p-body').innerText = info[id][1];
-        document.getElementById('popup').style.display = 'flex';
-    }
-</script>
-
-</body>
-</html>
+    const legalDetails = {
+        privacy: {
+            title: "سياسة الخصوصية التفصيلية",
+            body: "نحن في Bricolati Fix نلتزم بحماية خصوصية زوارنا. <br>1. **البيانات الشخصية**: لا نقوم بجمع أي أسماء أو عناوين بريد إلكتروني بشكل آلي.<br>2. **ملفات السجل**: نستخدم ملفات السجل القياسية لتحليل حركة المرور مجهولة الهوية.<br>3. **روابط الطرف الثالث**: موقعنا يحتوي على روابط تؤدي لـ AliExpress؛ يرجى مراجعة سياساتهم الخاصة عند المغادرة."
+        },
+        terms: {
+            title: "الشروط والأحكام",
+            body: "باستخدامك لهذا الموقع، فإنك توافق على:<br>1. **الغرض**: المحتوى تعليمي ومرجعي لمراجعة الأدوات التقنية فقط.<br>2. **الملكية**: جميع النصوص والمراجعات ملك لـ Bricolati Fix، ويمنع نسخها دون إذن.<br>3. **التغييرات**: نحتفظ بالحق في تحديث هذه الشروط لتعكس التطورات القانونية الجديدة."
+        },
+        disclaimer: {
+            title: "إخلاء المسؤولية (Affiliate Disclaimer)",
+            body: "هذا الموقع هو مرجع مستقل تماماً. نود إعلامكم بوضوح بأن:<br>1.
