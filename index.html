@@ -3,74 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bricolati Fix | التفاصيل القانونية</title>
+    <title>Bricolati Fix | المرجع القانوني</title>
     <style>
-        :root { --main-green: #2ecc71; --dark-blue: #2c3e50; }
-        body { background-color: #f4f7f6; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; display: flex; justify-content: center; }
-        .container { background: white; width: 100%; max-width: 450px; border-radius: 25px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 10px solid var(--main-green); text-align: center; }
-        .header h1 { color: var(--dark-blue); font-size: 28px; margin: 10px 0; }
-        .video-container { background: #000; border-radius: 20px; overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0; margin-bottom: 20px; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .post-body { text-align: right; border-right: 5px solid var(--main-green); padding-right: 15px; margin-bottom: 25px; }
-        .btn-seo { background: var(--main-green); color: white; border: none; width: 100%; padding: 15px; border-radius: 15px; font-weight: bold; font-size: 16px; cursor: pointer; margin-bottom: 30px; }
-        .legal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; border-top: 1px solid #eee; padding-top: 20px; }
-        .legal-btn { background: #f9f9f9; padding: 12px; border-radius: 10px; font-size: 12px; color: #3498db; cursor: pointer; border: 1px solid #eee; transition: 0.3s; }
-        .legal-btn:hover { background: #f0f0f0; }
-        /* نظام النافذة المنبثقة التفصيلية */
-        #modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 999; justify-content: center; align-items: center; }
-        .modal-box { background: white; padding: 25px; border-radius: 20px; width: 85%; max-width: 400px; text-align: right; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
-        .modal-text { font-size: 13px; color: #444; line-height: 1.8; max-height: 300px; overflow-y: auto; margin-bottom: 20px; }
+        body { background: #f0f2f5; font-family: sans-serif; margin: 0; padding: 15px; display: flex; justify-content: center; }
+        .container { background: white; width: 100%; max-width: 450px; border-radius: 20px; padding: 20px; border-top: 10px solid #2ecc71; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; }
+        .video { background: #000; border-radius: 15px; overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0; margin: 20px 0; }
+        .video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .post { text-align: right; border-right: 5px solid #2ecc71; padding-right: 12px; margin-bottom: 25px; }
+        .btn-green { background: #2ecc71; color: white; border: none; width: 100%; padding: 15px; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 16px; }
+        .legal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 25px; border-top: 1px solid #eee; padding-top: 20px; }
+        .legal-item { background: #f9f9f9; padding: 12px; border-radius: 10px; font-size: 12px; color: #3498db; border: 1px solid #ddd; cursor: pointer; }
+        /* نافذة التفاصيل */
+        #popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; }
+        .popup-box { background: white; padding: 20px; border-radius: 15px; width: 85%; max-width: 400px; text-align: right; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header">
-        <h1>Bricolati Fix 🛠️</h1>
-        <p style="color:#888; font-size:12px;">المرجع المستقل للمراجعات والتقنية</p>
-    </div>
+    <h1 style="color:#2c3e50; margin:0;">Bricolati Fix 🛠️</h1>
+    <p style="color:#888; font-size:12px;">المرجع المستقل للمراجعات والتقنية</p>
 
-    <div class="video-container">
+    <div class="video">
         <iframe src="https://www.youtube.com/embed/Z2WxRGYfjeU" allowfullscreen></iframe>
     </div>
 
-    <div class="post-body">
-        <h2 style="font-size:20px; color:var(--dark-blue);">انطلاق الواجهة القانونية</h2>
-        <p style="font-size:14px; color:#555;">نقدم لك مراجعات دقيقة للأدوات التقنية مع التزام كامل بالشفافية القانونية والبيانات المرجعية.</p>
+    <div class="post">
+        <h2 style="font-size:18px; color:#2c3e50;">انطلاق الواجهة القانونية</h2>
+        <p style="font-size:13px; color:#555; line-height:1.6;">نقدم لك أدق المراجعات للأدوات التقنية مع التزام كامل بالشفافية القانونية والبيانات المرجعية الدقيقة.</p>
     </div>
 
-    <button class="btn-seo" onclick="alert('تم نسخ بيانات SEO بنجاح!')">نسخ بيانات SEO الواجهة 📋</button>
+    <button class="btn-green" onclick="alert('تم نسخ بيانات SEO بنجاح!')">نسخ بيانات SEO الواجهة 📋</button>
 
     <div class="legal-grid">
-        <div class="legal-btn" onclick="openL('p')">🛡️ الخصوصية</div>
-        <div class="legal-btn" onclick="openL('t')">⚖️ الشروط</div>
-        <div class="legal-btn" onclick="openL('d')">⚠️ إخلاء المسؤولية</div>
-        <div class="legal-btn" onclick="openL('c')">🍪 الكوكيز</div>
+        <div class="legal-item" onclick="show('p')">🛡️ الخصوصية</div>
+        <div class="legal-item" onclick="show('t')">⚖️ الشروط</div>
+        <div class="legal-item" onclick="show('d')">⚠️ إخلاء المسؤولية</div>
+        <div class="legal-item" onclick="show('c')">🍪 الكوكيز</div>
     </div>
     
-    <p style="font-size: 10px; color: #ccc; margin-top: 20px;">Bricolati Fix | Shoppress19 2026 ©</p>
+    <p style="font-size:10px; color:#ccc; margin-top:20px;">© 2026 Bricolati Fix | Shoppress19</p>
 </div>
 
-<div id="modal" onclick="this.style.display='none'">
-    <div class="modal-box" onclick="event.stopPropagation()">
-        <h3 id="m-title" style="color:var(--dark-blue); border-bottom: 2px solid var(--main-green); padding-bottom: 10px;"></h3>
-        <div id="m-body" class="modal-text"></div>
-        <button class="btn-seo" onclick="document.getElementById('modal').style.display='none'">إغلاق وقبول</button>
+<div id="popup" onclick="this.style.display='none'">
+    <div class="popup-box" onclick="event.stopPropagation()">
+        <h3 id="p-title" style="color:#2c3e50; border-bottom: 2px solid #2ecc71; padding-bottom: 10px; margin-top:0;"></h3>
+        <p id="p-body" style="font-size:13px; color:#444; line-height:1.7;"></p>
+        <button class="btn-green" onclick="document.getElementById('popup').style.display='none'">إغلاق</button>
     </div>
 </div>
 
 <script>
-    const content = {
-        p: { title: "سياسة الخصوصية", body: "نلتزم في Bricolati بحماية بياناتك. نحن لا نجمع أي معلومات شخصية بشكل مباشر، وأي بيانات تصفح يتم التعامل معها بشكل مجهول لتحسين أداء المدونة المرجعية." },
-        t: { title: "الشروط والأحكام", body: "استخدامك لهذا الموقع يعني موافقتك على القواعد. المحتوى مخصص للأغراض التعليمية ومراجعة أدوات AliExpress بموضوعية تامة. يمنع نسخ المحتوى دون ذكر المصدر." },
-        d: { title: "إخلاء المسؤولية", body: "هذا الموقع هو مرجع مستقل. الروابط المنشورة قد تكون روابط تابعة (Affiliate)، مما يعني أننا قد نحصل على عمولة بسيطة عند الشراء لدعم استمرارية المراجعات التقنية دون أي زيادة في السعر عليك." },
-        c: { title: "ملفات الكوكيز", body: "نستخدم ملفات تعريف الارتباط لتحليل حركة الزوار وتوفير تجربة تصفح سلسة. يمكنك التحكم في هذه الإعدادات من خلال متصفحك الخاص في أي وقت." }
+    const info = {
+        p: ["سياسة الخصوصية", "نحن لا نجمع أي بيانات شخصية. تصفحك آمن تماماً، والبيانات التقنية تستخدم فقط لتحسين تجربة المستخدم المرجعية."],
+        t: ["الشروط والأحكام", "المحتوى مخصص للأغراض التعليمية. يمنع نسخ المراجعات دون ذكر المصدر الرسمي Bricolati Fix."],
+        d: ["إخلاء المسؤولية", "هذا الموقع مرجع مستقل. الروابط المنشورة لـ AliExpress قد تكون روابط تابعة تمنحنا عمولة بسيطة لدعم استمرار المراجعات."],
+        c: ["ملفات الكوكيز", "نستخدم الكوكيز لتحسين سرعة الموقع وتحليل حركة الزوار بشكل مجهول الهوية لضمان جودة المحتوى."]
     };
 
-    function openL(id) {
-        document.getElementById('m-title').innerText = content[id].title;
-        document.getElementById('m-body').innerText = content[id].body;
-        document.getElementById('modal').style.display = 'flex';
+    function show(id) {
+        document.getElementById('p-title').innerText = info[id][0];
+        document.getElementById('p-body').innerText = info[id][1];
+        document.getElementById('popup').style.display = 'flex';
     }
 </script>
 
