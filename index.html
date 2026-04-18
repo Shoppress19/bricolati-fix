@@ -3,80 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bricolati Fix | المرجع الرسمي</title>
+    <title>Bricolati Blog | مراجعات الأدوات التقنية</title>
     <style>
+        :root { --main-green: #2ecc71; --dark-blue: #2c3e50; --bg-gray: #f4f9fc; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background: linear-gradient(135deg, #f4f9fc 0%, #e9f0f5 100%);
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            display: flex; justify-content: center; align-items: center;
-            min-height: 100vh; padding: 1.5rem;
-        }
+        body { background: var(--bg-gray); font-family: 'Segoe UI', Tahoma, sans-serif; padding: 20px; }
 
-        .card {
-            max-width: 550px; width: 100%; background: #ffffff;
-            border-radius: 2.5rem; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            padding: 2rem; border: 1px solid rgba(46, 204, 113, 0.2);
-            text-align: center; position: relative;
-        }
+        /* الهيدر الرئيسي */
+        .main-header { text-align: center; margin-bottom: 40px; }
+        .main-header h1 { color: var(--dark-blue); font-size: 2.5rem; margin-bottom: 10px; }
+        .main-header p { color: #5f6c7a; font-size: 1rem; }
 
-        .header h1 { font-size: 2.2rem; font-weight: 800; color: #2c3e50; margin-bottom: 5px; }
-        .sub { color: #5f6c7a; font-size: 0.9rem; border-top: 1px solid #eee; display: inline-block; padding-top: 5px; margin-bottom: 15px; }
+        /* شبكة تدوينات المنتجات */
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
 
-        /* قسم التاريخ والكاتب الجديد */
-        .meta-info { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-bottom: 20px; }
-        .date-tag { background: #f0f4fa; padding: 5px 15px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; color: #3a4c62; }
-        .author-tag { font-size: 0.9rem; color: #2c3e50; font-weight: 500; }
+        /* بطاقة المنتج (Post Card) */
+        .post-card { background: white; border-radius: 2rem; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid rgba(46, 204, 113, 0.1); transition: 0.3s; }
+        .post-card:hover { transform: translateY(-10px); }
+        
+        .video-thumb { background: #000; position: relative; padding-bottom: 56.25%; height: 0; }
+        .video-thumb iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        /* مشغل الفيديو */
-        .video-box {
-            background: #000; border-radius: 1.5rem; overflow: hidden;
-            position: relative; padding-bottom: 56.25%; height: 0; margin-bottom: 25px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .post-content { padding: 20px; text-align: right; }
+        .post-meta { font-size: 0.8rem; color: #888; margin-bottom: 10px; display: flex; justify-content: space-between; }
+        .post-title { font-size: 1.3rem; color: var(--dark-blue); margin-bottom: 15px; border-right: 4px solid var(--main-green); padding-right: 10px; }
+        .post-excerpt { font-size: 0.95rem; color: #444; line-height: 1.6; margin-bottom: 20px; }
 
-        /* المحتوى */
-        .content { text-align: right; border-right: 5px solid #2ecc71; padding-right: 1rem; margin-bottom: 25px; }
-        .content h2 { font-size: 1.6rem; color: #1f2e3a; margin-bottom: 8px; }
-        .content p { font-size: 1rem; color: #444; line-height: 1.7; }
-
-        /* زر SEO */
-        .btn-seo {
-            background: #2ecc71; color: white; border: none; width: 100%;
-            padding: 1.1rem; border-radius: 50px; font-weight: 700; cursor: pointer;
-            transition: 0.3s; box-shadow: 0 6px 15px rgba(46, 204, 113, 0.3); font-size: 1rem;
-        }
-        .btn-seo:hover { transform: scale(0.98); background: #27ae60; }
-
-        /* شبكة الروابط القانونية */
-        .legal-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-            margin-top: 25px; border-top: 1px solid #eee; padding-top: 20px;
-        }
-        .legal-item {
-            background: #f9f9f9; padding: 12px; border-radius: 12px;
-            font-size: 0.85rem; color: #3498db; cursor: pointer;
-            border: 1px solid #eee; transition: 0.2s;
-        }
-        .legal-item:hover { background: #f0f0f0; }
-
-        /* النافذة المنبثقة */
-        #modal {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.75); backdrop-filter: blur(4px);
-            z-index: 2000; justify-content: center; align-items: center; padding: 20px;
-        }
-        .modal-card { background: white; padding: 2rem; border-radius: 2rem; width: 100%; max-width: 400px; text-align: right; }
+        .btn-action { background: var(--main-green); color: white; border: none; width: 100%; padding: 12px; border-radius: 12px; font-weight: 700; cursor: pointer; display: block; text-decoration: none; text-align: center; margin-bottom: 10px; }
+        
+        /* تذييل الصفحة القانوني */
+        .footer-legal { margin-top: 50px; text-align: center; border-top: 1px solid #ddd; padding-top: 30px; }
+        .legal-links { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 20px; }
+        .legal-tag { background: white; padding: 8px 15px; border-radius: 10px; font-size: 0.8rem; color: #3498db; border: 1px solid #eee; cursor: pointer; }
     </style>
 </head>
 <body>
 
-<div class="card">
-    <div class="header">
-        <h1>Bricolati Fix 🛠️</h1>
-        <div class="sub">المرجع المستقل للمراجعات والتقنية</div>
-    </div>
+<header class="main-header">
+    <h1>Bricolati Blog 🛠️</h1>
+    <p>المرجع المستقل لمراجعة أدوات AliExpress التقنية</p>
+</header>
 
-    <div class="meta-info">
-        <span class="date-tag">📅 February 19, 20
+<main class="blog-grid">
+    <article class="post-card">
+        <div class="video-thumb">
+            <iframe src="https://www.youtube.com/embed/Z2WxRGYfjeU" allowfullscreen></iframe>
+        </div>
+        <div class="post-content">
+            <div class="post-meta">
+                <span>📅 19 فبراير 2026</span>
+                <span>✍️ bricolatipro</span>
+            </div>
+            <h2 class="post-title">مراجعة مفك البراغي الكهربائي الاحترافي</h2>
+            <p class="post-excerpt">نستعرض اليوم أحد أفضل الأدوات التقنية من AliExpress، مع فحص دقيق للأداء والمواصفات المرجعية.</p>
+            <a href="#" class="btn-action">مشاهدة المراجعة الكاملة 📋</a>
+            <button class="btn-action" style="background: #34495e;" onclick="alert('تم نسخ بيانات SEO للمنتج!')">نسخ بيانات SEO 🏷️</button>
+        </div>
+    </article>
+
+    <article class="post-card">
+        <div class="video-thumb">
+            <iframe src="https://www.youtube.com/embed/Z2WxRGYfjeU" allowfullscreen></iframe>
+        </div>
+        <div class="post-content">
+            <div class="post-meta">
+                <span>📅 18 فبراير 2026</span>
+                <span>✍️ bricolatipro</span>
+            </div>
+            <h2 class="post-title">مقياس الليزر الرقمي الذكي</h2>
+            <p class="post-excerpt">دقة عالية وتصميم مريح. تعرف على نتائج اختبارنا لهذا الجهاز التقني ومدى مطابقته للمواصفات.</p>
+            <a href="#" class="btn-action">مشاهدة المراجعة الكاملة 📋</a>
+            <button class="btn-action" style="background: #34495e;" onclick="alert('تم نسخ بيانات SEO للمنتج!')">نسخ بيانات SEO 🏷️</button>
+        </div>
+    </article>
+</main>
+
+<footer class="footer-legal">
+    <div class="legal-links">
+        <div class="legal-tag">🛡️ سياسة الخصوصية</div>
+        <div class="legal-tag">⚖️ الشروط والأحكام</div>
+        <div class="legal-tag">⚠️ إخلاء المسؤولية</div>
+        <div class="legal-tag">🍪 الكوكيز</div>
+    </div>
+    <p style="font-size: 0.8rem; color: #aaa;">Bricolati Fix | Shoppress19 2026 ©</p>
+</footer>
+
+</body>
+</html>
