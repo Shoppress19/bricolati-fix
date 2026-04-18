@@ -3,91 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bricolati Fix | المرجع الرسمي</title>
+    <title>Bricolati Fix | الواجهة الرسمية</title>
     <style>
         :root { --main-green: #2ecc71; --dark-blue: #2c3e50; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            background: linear-gradient(135deg, #f4f9fc 0%, #e9f0f5 100%); 
-            font-family: 'Segoe UI', Tahoma, sans-serif; 
-            display: flex; justify-content: center; align-items: center; 
-            min-height: 100vh; padding: 20px;
-        }
-        .card { 
-            background: white; width: 100%; max-width: 450px; 
-            border-radius: 30px; padding: 30px; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
-            border-top: 12px solid var(--main-green); 
-            text-align: center; position: relative;
-        }
-        .logo-section h1 { color: var(--dark-blue); font-size: 32px; margin-bottom: 5px; }
-        .logo-section p { color: #888; font-size: 14px; margin-bottom: 15px; }
-        
-        .date-tag { 
-            background: #f0f4fa; color: #3a4c62; padding: 6px 15px; 
-            border-radius: 50px; font-size: 13px; font-weight: 600; 
-            display: inline-block; margin-bottom: 20px;
-        }
-
-        .video-container { 
-            background: #000; border-radius: 20px; overflow: hidden; 
-            position: relative; padding-bottom: 56.25%; height: 0; margin-bottom: 25px;
-        }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-
-        .content-box { text-align: right; border-right: 5px solid var(--main-green); padding-right: 15px; margin-bottom: 30px; }
-        .content-box h2 { font-size: 22px; color: var(--dark-blue); margin-bottom: 10px; }
-        .content-box p { font-size: 15px; color: #555; line-height: 1.6; }
-
-        .btn-seo { 
-            background: var(--main-green); color: white; border: none; 
-            width: 100%; padding: 16px; border-radius: 15px; 
-            font-weight: 800; font-size: 17px; cursor: pointer; 
-            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.3); transition: 0.3s;
-        }
-        .btn-seo:hover { transform: scale(0.98); opacity: 0.9; }
-
-        .legal-grid { 
-            display: grid; grid-template-columns: 1fr 1fr; gap: 12px; 
-            margin-top: 30px; border-top: 1px solid #eee; padding-top: 25px; 
-        }
-        .legal-btn { 
-            background: #f9f9f9; padding: 12px; border-radius: 12px; 
-            font-size: 13px; color: #3498db; border: 1px solid #eee; cursor: pointer;
-            display: flex; align-items: center; justify-content: center; gap: 5px;
-        }
+        body { background: #f4f7f6; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; padding: 20px; }
+        .card { background: white; width: 100%; max-width: 450px; border-radius: 25px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 10px solid var(--main-green); text-align: center; }
+        .video-box { background: #000; border-radius: 20px; overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0; margin: 20px 0; }
+        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .btn-main { background: var(--main-green); color: white; border: none; width: 100%; padding: 15px; border-radius: 15px; font-weight: bold; cursor: pointer; text-decoration: none; display: block; margin-top: 20px; }
+        .legal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 25px; border-top: 1px solid #eee; padding-top: 20px; }
+        .legal-item { background: #f9f9f9; padding: 10px; border-radius: 10px; font-size: 12px; color: #3498db; border: 1px solid #eee; }
     </style>
 </head>
 <body>
-
-<div class="card">
-    <div class="logo-section">
+    <div class="card">
         <h1>🛠️ Bricolati Fix</h1>
-        <p>المرجع المستقل للمراجعات والتقنية</p>
+        <p style="color:#888; font-size:12px;">المرجع المستقل للمراجعات والتقنية</p>
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/Z2WxRGYfjeU" allowfullscreen></iframe>
+        </div>
+        <a href="blog.html" class="btn-main">دخول المدونة 🚀</a>
+        <div class="legal-grid">
+            <div class="legal-item">🛡️ الخصوصية</div>
+            <div class="legal-item">⚖️ الشروط</div>
+            <div class="legal-item">⚠️ إخلاء المسؤولية</div>
+            <div class="legal-item">🍪 الكوكيز</div>
+        </div>
     </div>
-
-    <div class="date-tag">📅 February 19, 2026</div>
-
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/Z2WxRGYfjeU" allowfullscreen></iframe>
-    </div>
-
-    <div class="content-box">
-        <h2>انطلاق الواجهة القانونية</h2>
-        <p>نقدم لك مراجعات دقيقة للأدوات التقنية مع التزام كامل بالشفافية القانونية والبيانات المرجعية.</p>
-    </div>
-
-    <button class="btn-seo" onclick="alert('تم نسخ بيانات SEO!')">📋 نسخ بيانات SEO الواجهة</button>
-
-    <div class="legal-grid">
-        <div class="legal-btn">🛡️ الخصوصية</div>
-        <div class="legal-btn">⚖️ الشروط</div>
-        <div class="legal-btn">⚠️ إخلاء المسؤولية</div>
-        <div class="legal-btn">🍪 الكوكيز</div>
-    </div>
-    
-    <p style="font-size: 10px; color: #ccc; margin-top: 25px;">Bricolati Fix | Shoppress19 2026 ©</p>
-</div>
-
 </body>
 </html>
