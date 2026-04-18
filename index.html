@@ -2,44 +2,33 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bricolati Fix</title>
     <style>
-        body { background: #f0f2f5; font-family: sans-serif; margin: 0; padding: 15px; display: flex; justify-content: center; }
-        .card { background: white; width: 100%; max-width: 450px; border-radius: 20px; padding: 20px; border-top: 8px solid #2ecc71; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; }
-        .video { background: #000; border-radius: 15px; overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0; margin: 20px 0; }
-        .video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .post { text-align: right; border-right: 4px solid #2ecc71; padding-right: 12px; margin-bottom: 20px; }
-        .btn { background: #2ecc71; color: white; border: none; width: 100%; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer; }
-        .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px; }
-        .foot-item { background: #f9f9f9; padding: 8px; border-radius: 8px; font-size: 11px; color: #3498db; border: 1px solid #ddd; cursor: pointer; }
+        body { background: #f0f2f5; font-family: sans-serif; text-align: center; padding: 50px; }
+        .box { background: white; padding: 30px; border-radius: 20px; border-top: 10px solid #2ecc71; box-shadow: 0 10px 20px rgba(0,0,0,0.1); display: inline-block; width: 90%; max-width: 400px; }
+        .btn { background: #2ecc71; color: white; border: none; padding: 15px; border-radius: 10px; cursor: pointer; width: 100%; font-weight: bold; margin-top: 20px; }
+        .links { margin-top: 20px; display: flex; justify-content: space-around; font-size: 12px; }
+        .link { color: #3498db; cursor: pointer; text-decoration: underline; }
     </style>
 </head>
 <body>
 
-<div class="card">
-    <h1 style="color:#2c3e50; margin:0;">🛠️ Bricolati Fix</h1>
-    <p style="color:#888; font-size:12px;">المرجع المستقل للمراجعات والتقنية</p>
-
-    <div class="video">
-        <iframe src="https://www.youtube.com/embed/Z2WxRGYfjeU" allowfullscreen></iframe>
+<div class="box">
+    <h1 style="color: #2c3e50;">Bricolati Fix 🛠️</h1>
+    <p style="color: #666;">المرجع المستقل للمراجعات</p>
+    
+    <div style="background: #000; color: white; padding: 40px; border-radius: 10px; margin: 20px 0;">
+        هنا مكان الفيديو (YouTube)
     </div>
 
-    <div class="post">
-        <h2 style="font-size:18px; color:#2c3e50;">انطلاق الواجهة القانونية</h2>
-        <p style="font-size:13px; color:#555; line-height:1.5;">نقدم لك مراجعات دقيقة للأدوات التقنية مع التزام كامل بالشفافية القانونية والبيانات المرجعية.</p>
-    </div>
+    <button class="btn" onclick="alert('شغال 100%!')">نسخ بيانات SEO 📋</button>
 
-    <button class="btn" onclick="alert('تم نسخ البيانات!')">نسخ بيانات SEO الواجهة 📋</button>
-
-    <div class="footer-grid">
-        <div class="foot-item" onclick="alert('نحن لا نجمع بياناتك الشخصية.')">🛡️ الخصوصية</div>
-        <div class="foot-item" onclick="alert('المحتوى مرجعي وتعليمي.')">⚖️ الشروط</div>
-        <div class="foot-item" onclick="alert('روابطنا قد تمنحنا عمولة بسيطة.')">⚠️ إخلاء المسؤولية</div>
-        <div class="foot-item" onclick="alert('نستخدم كوكيز لتحسين الأداء.')">🍪 الكوكيز</div>
+    <div class="links">
+        <span class="link" onclick="alert('سياسة الخصوصية تفصيلية')">الخصوصية</span>
+        <span class="link" onclick="alert('إخلاء مسؤولية تفصيلي')">إخلاء المسؤولية</span>
     </div>
     
-    <p style="font-size:10px; color:#ccc; margin-top:15px;">© 2026 Bricolati Fix | Shoppress19</p>
+    <p style="font-size: 10px; color: #999; margin-top: 20px;">© 2026 Bricolati</p>
 </div>
 
 </body>
