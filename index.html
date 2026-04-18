@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bricolati Fix | الواجهة القانونية</title>
     <style>
         * {
@@ -12,8 +12,8 @@
         }
 
         body {
-            background: linear-gradient(135deg, #f5f7fc 0%, #eef2f5 100%);
-            font-family: 'Segoe UI', 'Tahoma', system-ui, 'Cairo', -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f4f9fc 0%, #e9f0f5 100%);
+            font-family: 'Segoe UI', 'Tahoma', system-ui, 'Cairo', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,22 +21,22 @@
             padding: 1.5rem;
         }
 
-        /* البطاقة الرئيسية - أنيقة وبسيطة مثل التصميم المطلوب */
+        /* البطاقة الرئيسية */
         .card {
             max-width: 680px;
             width: 100%;
             background: #ffffff;
             border-radius: 2rem;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
             padding: 2rem 2rem 2.5rem;
-            transition: all 0.2s ease;
+            transition: all 0.2s;
             border: 1px solid rgba(46, 204, 113, 0.2);
         }
 
-        /* الترويسة */
+        /* الهيدر */
         .header {
             text-align: center;
-            margin-bottom: 1.75rem;
+            margin-bottom: 1.5rem;
         }
 
         .header h1 {
@@ -46,46 +46,44 @@
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            letter-spacing: -0.3px;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
         }
 
         .header .sub {
             color: #5f6c7a;
             font-size: 0.9rem;
             font-weight: 500;
-            border-top: 1px solid #e9edf2;
+            border-top: 1px solid #eef2f6;
             display: inline-block;
-            padding-top: 8px;
+            padding-top: 6px;
         }
 
-        /* خط التاريخ والكاتب */
+        /* معلومات التاريخ والكاتب */
         .meta {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             flex-wrap: wrap;
-            margin: 1rem 0 1.8rem 0;
+            margin: 1rem 0 1.5rem 0;
             padding-bottom: 0.75rem;
-            border-bottom: 1px dashed #e2e8f0;
+            border-bottom: 1px solid #eef2f6;
             font-size: 0.85rem;
-            color: #4a5b6e;
+            color: #3a4c62;
         }
 
         .date {
             font-weight: 600;
-            background: #f0f4f9;
-            padding: 0.2rem 0.8rem;
+            background: #f0f4fa;
+            padding: 0.25rem 1rem;
             border-radius: 40px;
         }
 
         .author {
             font-weight: 500;
             color: #2c3e50;
-            letter-spacing: -0.2px;
         }
 
-        /* المحتوى الأساسي */
+        /* المحتوى النصي */
         .content {
             margin: 1.8rem 0 2rem 0;
         }
@@ -96,7 +94,7 @@
             color: #1f2e3a;
             border-right: 5px solid #2ecc71;
             padding-right: 1rem;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
 
         .content p {
@@ -106,7 +104,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* الزر الرئيسي */
+        /* زر النسخ */
         .btn-seo {
             background: #2ecc71;
             border: none;
@@ -132,14 +130,14 @@
             box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
         }
 
-        /* رسالة منبثقة (toast) */
+        /* رسالة منبثقة */
         .toast-message {
             position: fixed;
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             background: #1e2a36e6;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             color: white;
             padding: 10px 24px;
             border-radius: 50px;
@@ -184,8 +182,8 @@
             }
             .meta {
                 flex-direction: column;
-                gap: 8px;
                 align-items: flex-start;
+                gap: 8px;
             }
         }
     </style>
@@ -198,7 +196,6 @@
         <div class="sub">المرجع المستقل للمراجعات والتقنية</div>
     </div>
 
-    <!-- معلومات التاريخ والكاتب كما في الصورة -->
     <div class="meta">
         <span class="date">📅 February 19, 2026</span>
         <span class="author">✍️ bricolatipro</span>
@@ -216,33 +213,31 @@
 
 <script>
     (function() {
-        // محتوى SEO مطابق لروح الموقع ومحسّن للنسخ
-        const seoContent = `Bricolati Fix | المرجع المستقل للمراجعات التقنية - واجهة قانونية شفافة. نقدم مراجعات دقيقة للأدوات التقنية مع الالتزام بمعايير البيانات والمصداقية. الكلمات المفتاحية: مراجعات تقنية، Bricolati Fix، أدوات تقنية، شفافية قانونية، تقييمات موثوقة. تاريخ النشر: February 19, 2026.`;
+        // نص SEO المحسن (يمكن تعديله حسب الرغبة)
+        const seoContent = `Bricolati Fix | المرجع المستقل للمراجعات والتقنية. نقدم مراجعات دقيقة للأدوات التقنية مع الالتزام بالشفافية القانونية والبيانات المرجعية الدقيقة. الكلمات المفتاحية: مراجعات تقنية، أدوات تقنية، Bricolati Fix، واجهة قانونية. تاريخ النشر: February 19, 2026.`;
 
-        // دالة عرض رسالة短暂ة
+        // دالة عرض الإشعار
         function showToast(message) {
-            // إزالة أي توست قديم
-            const oldToast = document.querySelector('.toast-message');
-            if (oldToast) oldToast.remove();
+            const existing = document.querySelector('.toast-message');
+            if (existing) existing.remove();
 
             const toast = document.createElement('div');
             toast.className = 'toast-message';
             toast.innerText = message;
             document.body.appendChild(toast);
 
-            // إزالة تلقائياً بعد انتهاء الأنيميشن
             setTimeout(() => {
                 if (toast && toast.parentNode) toast.remove();
-            }, 2200);
+            }, 2300);
         }
 
-        // دالة النسخ الأساسية (تدعم Clipboard API والـ fallback)
+        // دالة النسخ (تدعم Clipboard API و fallback)
         async function copySEO() {
             try {
                 await navigator.clipboard.writeText(seoContent);
-                showToast("✅ تم نسخ بيانات SEO بنجاح! يمكنك استخدامها في وصف الموقع.");
+                showToast("✅ تم نسخ بيانات SEO بنجاح!");
             } catch (err) {
-                // Fallback للأجهزة القديمة أو البيئات غير الآمنة
+                // الطريقة الاحتياطية
                 const textArea = document.createElement('textarea');
                 textArea.value = seoContent;
                 document.body.appendChild(textArea);
@@ -253,13 +248,10 @@
             }
         }
 
-        const copyButton = document.getElementById('copySeoBtn');
-        if (copyButton) {
-            copyButton.addEventListener('click', copySEO);
+        const copyBtn = document.getElementById('copySeoBtn');
+        if (copyBtn) {
+            copyBtn.addEventListener('click', copySEO);
         }
-
-        // إضافة تأثير بسيط للزر (اختياري)
-        console.log("✅ واجهة Bricolati Fix القانونية جاهزة - تصميم مطابق للصورة");
     })();
 </script>
 </body>
