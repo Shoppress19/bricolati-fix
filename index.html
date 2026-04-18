@@ -2,233 +2,191 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Bricolati Fix | الواجهة القانونية - مراجعات تقنية شفافة</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Bricolati Fix | الواجهة القانونية</title>
     <style>
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
-        :root {
-            --main-green: #2ecc71;
-            --dark-blue: #2c3e50;
-            --light-gray: #f8fafc;
-            --border-radius-card: 28px;
-        }
+
         body {
-            background: linear-gradient(145deg, #eef2f3 0%, #d9e4e8 100%);
-            font-family: 'Segoe UI', 'Tahoma', system-ui, -apple-system, 'Cairo', sans-serif;
-            margin: 0;
-            padding: 20px;
-            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fc 0%, #eef2f5 100%);
+            font-family: 'Segoe UI', 'Tahoma', system-ui, 'Cairo', -apple-system, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
+            min-height: 100vh;
+            padding: 1.5rem;
         }
+
+        /* البطاقة الرئيسية - أنيقة وبسيطة مثل التصميم المطلوب */
         .card {
-            background: white;
+            max-width: 680px;
             width: 100%;
-            max-width: 520px;
-            border-radius: var(--border-radius-card);
-            padding: 28px 24px 32px 24px;
-            border-top: 8px solid var(--main-green);
-            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: all 0.2s ease;
-        }
-        .header h1 {
-            color: var(--dark-blue);
-            font-size: 32px;
-            margin: 10px 0 5px 0;
-            letter-spacing: -0.3px;
-            font-weight: 700;
-        }
-        .header p {
-            color: #5a6874;
-            font-size: 13px;
-            margin-top: 6px;
-            font-weight: 500;
-        }
-        .video-box {
-            background: #0a0f14;
-            border-radius: 24px;
-            overflow: hidden;
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
-            height: 0;
-            margin: 20px 0 24px 0;
-            box-shadow: 0 8px 18px rgba(0,0,0,0.2);
-        }
-        .video-box iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        .content {
-            text-align: right;
-            border-right: 5px solid var(--main-green);
-            padding-right: 18px;
-            margin-bottom: 28px;
             background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.02);
+            padding: 2rem 2rem 2.5rem;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(46, 204, 113, 0.2);
         }
+
+        /* الترويسة */
+        .header {
+            text-align: center;
+            margin-bottom: 1.75rem;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(145deg, #1f2e3a, #2c3e50);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .sub {
+            color: #5f6c7a;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-top: 1px solid #e9edf2;
+            display: inline-block;
+            padding-top: 8px;
+        }
+
+        /* خط التاريخ والكاتب */
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin: 1rem 0 1.8rem 0;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px dashed #e2e8f0;
+            font-size: 0.85rem;
+            color: #4a5b6e;
+        }
+
+        .date {
+            font-weight: 600;
+            background: #f0f4f9;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+        }
+
+        .author {
+            font-weight: 500;
+            color: #2c3e50;
+            letter-spacing: -0.2px;
+        }
+
+        /* المحتوى الأساسي */
+        .content {
+            margin: 1.8rem 0 2rem 0;
+        }
+
         .content h2 {
-            font-size: 22px;
-            color: var(--dark-blue);
-            margin: 0 0 12px 0;
+            font-size: 1.7rem;
             font-weight: 700;
+            color: #1f2e3a;
+            border-right: 5px solid #2ecc71;
+            padding-right: 1rem;
+            margin-bottom: 1.2rem;
         }
+
         .content p {
-            font-size: 14px;
-            color: #2c3e50cc;
-            line-height: 1.65;
-            margin: 0;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #2d3e4f;
+            margin-bottom: 0.5rem;
         }
+
+        /* الزر الرئيسي */
         .btn-seo {
-            background: var(--main-green);
-            color: white;
+            background: #2ecc71;
             border: none;
             width: 100%;
-            padding: 16px 12px;
-            border-radius: 40px;
-            font-weight: 800;
-            font-size: 16px;
+            padding: 1rem 1.2rem;
+            border-radius: 60px;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
             cursor: pointer;
             transition: all 0.25s;
-            box-shadow: 0 4px 8px rgba(46,204,113,0.3);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
+            box-shadow: 0 6px 14px rgba(46, 204, 113, 0.3);
             font-family: inherit;
         }
+
         .btn-seo:hover {
             background: #27ae60;
             transform: scale(0.98);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
         }
-        .legal-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-            margin-top: 34px;
-            border-top: 1px solid #e9edf2;
-            padding-top: 28px;
-        }
-        .legal-item {
-            background: var(--light-gray);
-            padding: 12px 8px;
-            border-radius: 24px;
-            font-size: 13px;
-            font-weight: 600;
-            color: #1e6f9f;
-            cursor: pointer;
-            border: 1px solid #e2e8f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: all 0.2s;
-            backdrop-filter: blur(2px);
-        }
-        .legal-item:hover {
-            background: #eef2ff;
-            border-color: var(--main-green);
-            color: var(--dark-blue);
-            transform: translateY(-2px);
-        }
-        /* Modal styles */
-        #modal {
-            display: none;
+
+        /* رسالة منبثقة (toast) */
+        .toast-message {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(4px);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .modal-card {
-            background: white;
-            padding: 24px 26px;
-            border-radius: 32px;
-            width: 100%;
-            max-width: 440px;
-            text-align: right;
-            animation: pop 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            box-shadow: 0 30px 40px rgba(0,0,0,0.3);
-        }
-        @keyframes pop {
-            from { transform: scale(0.92); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-        .modal-card h3 {
-            font-size: 1.6rem;
-            color: var(--dark-blue);
-            margin-top: 0;
-            margin-bottom: 12px;
-            border-right: 4px solid var(--main-green);
-            padding-right: 14px;
-        }
-        .modal-body {
-            font-size: 14px;
-            color: #2d3e50;
-            line-height: 1.75;
-            max-height: 330px;
-            overflow-y: auto;
-            margin: 18px 0 20px 0;
-            padding-left: 4px;
-            scrollbar-width: thin;
-        }
-        .modal-body p {
-            margin: 0 0 12px 0;
-        }
-        .close-modal-btn {
-            background: var(--main-green);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 40px;
-            color: white;
-            font-weight: bold;
-            font-size: 14px;
-            width: 100%;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .close-modal-btn:hover {
-            background: #1e9b53;
-        }
-        .toast-msg {
-            position: fixed;
-            bottom: 25px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            background: #2c3e50e6;
-            backdrop-filter: blur(8px);
+            background: #1e2a36e6;
+            backdrop-filter: blur(10px);
             color: white;
-            padding: 12px 24px;
-            border-radius: 60px;
-            font-size: 14px;
-            z-index: 2100;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
             font-weight: 500;
-            pointer-events: none;
-            animation: fadeOut 2s forwards;
+            z-index: 2000;
             white-space: nowrap;
+            animation: fadeUpOut 2.2s forwards;
+            pointer-events: none;
         }
-        @keyframes fadeOut {
-            0% { opacity: 1; transform: translateX(-50%) translateY(0);}
-            70% { opacity: 1; }
-            100% { opacity: 0; transform: translateX(-50%) translateY(20px); visibility: hidden; }
+
+        @keyframes fadeUpOut {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(15px);
+            }
+            15% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+            85% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-10px);
+                visibility: hidden;
+            }
         }
-        @media (max-width: 480px) {
-            .card { padding: 20px; }
-            .legal-item { font-size: 11px; padding: 10px 6px; gap: 5px; }
-            .content h2 { font-size: 19px; }
+
+        /* استجابة للشاشات الصغيرة */
+        @media (max-width: 550px) {
+            .card {
+                padding: 1.5rem;
+            }
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            .content h2 {
+                font-size: 1.4rem;
+            }
+            .meta {
+                flex-direction: column;
+                gap: 8px;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
@@ -237,167 +195,72 @@
 <div class="card">
     <div class="header">
         <h1>🛠️ Bricolati Fix</h1>
-        <p style="color:#6c7a89; font-size:13px;">المرجع المستقل للمراجعات والتقنية</p>
+        <div class="sub">المرجع المستقل للمراجعات والتقنية</div>
     </div>
 
-    <div class="video-box">
-        <iframe src="https://www.youtube.com/embed/Z2WxRGYfjeU" allowfullscreen title="فيديو توضيحي Bricolati Fix"></iframe>
+    <!-- معلومات التاريخ والكاتب كما في الصورة -->
+    <div class="meta">
+        <span class="date">📅 February 19, 2026</span>
+        <span class="author">✍️ bricolatipro</span>
     </div>
 
     <div class="content">
-        <h2>📜 انطلاق الواجهة القانونية</h2>
-        <p>نقدم لك أدق المراجعات للأدوات التقنية مع التزام كامل بالشفافية القانونية والبيانات المرجعية الدقيقة. هذه المنصة مرخصة وفق معايير حماية المستهلك الرقمية.</p>
+        <h2>انطلاق الواجهة القانونية</h2>
+        <p>نقدم لك أدق المراجعات للأدوات التقنية مع التزام كامل بالشفافية القانونية والبيانات المرجعية الدقيقة.</p>
     </div>
 
-    <button class="btn-seo" id="copySeoBtn">📋 نسخ بيانات SEO الواجهة</button>
-
-    <div class="legal-grid">
-        <div class="legal-item" data-modal="terms">📄 شروط الاستخدام</div>
-        <div class="legal-item" data-modal="privacy">🔒 سياسة الخصوصية</div>
-        <div class="legal-item" data-modal="disclaimer">⚠️ إخلاء مسؤولية</div>
-        <div class="legal-item" data-modal="reference">📊 مرجعية البيانات</div>
-    </div>
-</div>
-
-<!-- Modal Structure -->
-<div id="modal">
-    <div class="modal-card">
-        <h3 id="modalTitle">العنوان القانوني</h3>
-        <div class="modal-body" id="modalBody">
-            المحتوى القانوني سيظهر هنا ...
-        </div>
-        <button class="close-modal-btn" id="closeModalBtn">إغلاق ✕</button>
-    </div>
+    <button class="btn-seo" id="copySeoBtn">
+        📋 نسخ بيانات SEO الواجهة
+    </button>
 </div>
 
 <script>
-    // ======================== محتوي النصوص القانونية (المواد المحدثة) ========================
-    const legalContents = {
-        terms: {
-            title: "📜 شروط الاستخدام",
-            body: `<p><strong>آخر تحديث:</strong> 2025</p>
-            <p>باستخدامك منصة Bricolati Fix فإنك توافق على الالتزام بهذه الشروط. المنصة تقدم محتوى تقني ومراجعات مستقلة للأجهزة والأدوات، ويُمنع نسخ المحتوى بغرض إعادة النشر التجاري دون إذن خطي مسبق.</p>
-            <p>جميع المراجعات مبنية على اختبارات فعلية وبيانات متاحة، ويحق لنا تحديث المحتوى في أي وقت. المستخدم مسؤول عن استخدام التوصيات بحذر، والموقع غير ملزم بأي نتائج ناتجة عن تطبيق النصائح التقنية خارج نطاق التوجيه.</p>
-            <p>يمنع استخدام المنصة لنشر محتوى غير قانوني أو انتهاك حقوق الغير. نحتفظ بحق تعليق الحسابات الافتراضية في حال إساءة الاستخدام.</p>`
-        },
-        privacy: {
-            title: "🔒 سياسة الخصوصية",
-            body: `<p>نحن في Bricolati Fix نولي خصوصية زوارنا أهمية كبيرة. لا نقوم بجمع بيانات شخصية مثل الاسم أو البريد الإلكتروني إلا عند ملء نماذج التواصل الطوعية. معلومات التصفح (مثل عنوان IP ونوع المتصفح) تُستخدم فقط لتحسين تجربة المستخدم وتحليلات الموقع الداخلية عبر خدمات محايدة.</p>
-            <p>لا نبيع بياناتك أبدًا لأطراف خارجية. يتم استخدام الكوكيز الأساسية فقط لضمان عمل الواجهة بشكل صحيح. يمكنك تعطيل الكوكيز من إعدادات المتصفح، ولكن قد تتأثر بعض الوظائف.</p>
-            <p>لأي استفسار بخصوص الخصوصية، يمكنك التواصل عبر نموذج الاتصال (قريبًا). نلتزم بالقوانين المحلية والدولية لحماية البيانات.</p>`
-        },
-        disclaimer: {
-            title: "⚠️ إخلاء مسؤولية",
-            body: `<p>المعلومات التقنية والمراجعات المنشورة على Bricolati Fix هي لأغراض إعلامية وتثقيفية فقط. نحن لا نتحمل المسؤولية عن أي خسائر مادية أو تقنية ناتجة عن الاعتماد على هذه المعلومات دون استشارة مختص.</p>
-            <p>جميع العلامات التجارية المذكورة مملوكة لأصحابها، واستخدامها لأغراض المراجعة يندرج ضمن الاستخدام العادل. قد تحتوي الروابط الخارجية على محتوى متغير، ولا نتحكم في سياسات تلك المواقع.</p>
-            <p>نحن نسعى لتقديم محتوى دقيق، لكن الأخطاء البشرية واردة، يرجى الإبلاغ عن أي ملاحظات لتحسين الدقة.</p>`
-        },
-        reference: {
-            title: "📊 مرجعية البيانات",
-            body: `<p>تعتمد Bricolati Fix على مصادر بيانات معتمدة واختبارات ميدانية. تشمل المراجع: تقارير تقنية من منصات عالمية، قواعد بيانات مفتوحة للمواصفات، واختبارات داخلية باستخدام أدوات قياس معايرة.</p>
-            <p>نقوم بتحديث جداول الأداء والأسعار كل أسبوعين لضمان الدقة. جميع الإحصائيات توثق بتواريخ الإصدار. يمكن لأي جهة طلب تصحيح البيانات عبر البريد الإلكتروني الرسمي (سيُضاف قريباً).</p>
-            <p>نتبنى مبدأ الشفافية الكاملة: نذكر المصادر الرئيسية في كل مراجعة مطولة، ونسعى لتوثيق أي تعارض مصالح محتمل.</p>`
+    (function() {
+        // محتوى SEO مطابق لروح الموقع ومحسّن للنسخ
+        const seoContent = `Bricolati Fix | المرجع المستقل للمراجعات التقنية - واجهة قانونية شفافة. نقدم مراجعات دقيقة للأدوات التقنية مع الالتزام بمعايير البيانات والمصداقية. الكلمات المفتاحية: مراجعات تقنية، Bricolati Fix، أدوات تقنية، شفافية قانونية، تقييمات موثوقة. تاريخ النشر: February 19, 2026.`;
+
+        // دالة عرض رسالة短暂ة
+        function showToast(message) {
+            // إزالة أي توست قديم
+            const oldToast = document.querySelector('.toast-message');
+            if (oldToast) oldToast.remove();
+
+            const toast = document.createElement('div');
+            toast.className = 'toast-message';
+            toast.innerText = message;
+            document.body.appendChild(toast);
+
+            // إزالة تلقائياً بعد انتهاء الأنيميشن
+            setTimeout(() => {
+                if (toast && toast.parentNode) toast.remove();
+            }, 2200);
         }
-    };
 
-    // DOM elements
-    const modalEl = document.getElementById('modal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalBody = document.getElementById('modalBody');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    const copyBtn = document.getElementById('copySeoBtn');
-
-    // وظائف النافذة المنبثقة
-    function showModal(type) {
-        const content = legalContents[type];
-        if (content) {
-            modalTitle.innerText = content.title;
-            modalBody.innerHTML = content.body;
-            modalEl.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // منع التمرير خلف المودال
-        } else {
-            // fallback
-            modalTitle.innerText = "معلومات قانونية";
-            modalBody.innerHTML = "<p>المحتوى قيد التحديث، يرجى العودة لاحقاً.</p>";
-            modalEl.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+        // دالة النسخ الأساسية (تدعم Clipboard API والـ fallback)
+        async function copySEO() {
+            try {
+                await navigator.clipboard.writeText(seoContent);
+                showToast("✅ تم نسخ بيانات SEO بنجاح! يمكنك استخدامها في وصف الموقع.");
+            } catch (err) {
+                // Fallback للأجهزة القديمة أو البيئات غير الآمنة
+                const textArea = document.createElement('textarea');
+                textArea.value = seoContent;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast("📋 تم نسخ البيانات (طريقة احتياطية)");
+            }
         }
-    }
 
-    function closeModal() {
-        modalEl.style.display = 'none';
-        document.body.style.overflow = '';
-    }
-
-    // Event listeners for legal items
-    const legalItems = document.querySelectorAll('.legal-item');
-    legalItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            const modalType = item.getAttribute('data-modal');
-            if (modalType === 'terms') showModal('terms');
-            else if (modalType === 'privacy') showModal('privacy');
-            else if (modalType === 'disclaimer') showModal('disclaimer');
-            else if (modalType === 'reference') showModal('reference');
-            else showModal('terms'); // افتراضي
-        });
-    });
-
-    // إغلاق المودال عبر الزر
-    closeModalBtn.addEventListener('click', closeModal);
-    // إغلاق المودال عند الضغط على الخلفية
-    modalEl.addEventListener('click', (e) => {
-        if (e.target === modalEl) {
-            closeModal();
+        const copyButton = document.getElementById('copySeoBtn');
+        if (copyButton) {
+            copyButton.addEventListener('click', copySEO);
         }
-    });
 
-    // --- وظيفة نسخ SEO data مع إظهار رسالة منبثقة مؤقتة ---
-    function showToast(message) {
-        // إزالة أي توست موجود سابقاً
-        const existingToast = document.querySelector('.toast-msg');
-        if(existingToast) existingToast.remove();
-        
-        const toast = document.createElement('div');
-        toast.className = 'toast-msg';
-        toast.innerText = message;
-        document.body.appendChild(toast);
-        setTimeout(() => {
-            if(toast && toast.parentNode) toast.remove();
-        }, 2200);
-    }
-
-    async function copySEOData() {
-        // محتوى SEO مُحسّن يعكس واجهة الموقع القانونية + المراجعات
-        const seoText = `Bricolati Fix - المنصة القانونية للمراجعات التقنية | مراجعات دقيقة للأدوات والإلكترونيات | شفافية كاملة، بيانات معتمدة، وإخلاء مسؤولية واضح. الكلمات المفتاحية: مراجعة أدوات تقنية، Bricolati Fix، تقييمات موثوقة، واجهة قانونية للمراجعات، شروط الاستخدام، أفضل محتوى تقني عربي. الرابط: bricolati.fix/reviews | نسخة مرجع البيانات: 2025`;
-
-        try {
-            await navigator.clipboard.writeText(seoText);
-            showToast("✅ تم نسخ بيانات SEO بنجاح! يمكنك استخدامها في وصف الموقع.");
-        } catch (err) {
-            // Fallback للأجهزة القديمة
-            const textarea = document.createElement('textarea');
-            textarea.value = seoText;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-            showToast("📋 تم نسخ بيانات SEO (الطريقة الاحتياطية)");
-        }
-    }
-
-    // ربط زر النسخ
-    copyBtn.addEventListener('click', copySEOData);
-
-    // إضافة تحسين صغير: إغلاق المودال بزر Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modalEl.style.display === 'flex') {
-            closeModal();
-        }
-    });
-
-    // التأكد من أن الفيديو لا يتداخل مع الإغلاق (لا حاجة إضافية)
-    // إضافة تحسين للشاشات الصغيرة جداً
-    console.log("✅ Bricolati Fix - الواجهة القانونية جاهزة بكامل وظائفها");
+        // إضافة تأثير بسيط للزر (اختياري)
+        console.log("✅ واجهة Bricolati Fix القانونية جاهزة - تصميم مطابق للصورة");
+    })();
 </script>
 </body>
 </html>
